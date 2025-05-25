@@ -1,0 +1,27 @@
+{
+  "name": "France Solaire - Installation Panneaux Solaires & Isolation",
+  "short_name": "France Solaire",
+  "description": "Expert en installation de panneaux solaires photovoltaïques et isolation thermique dans les Hauts-de-France",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#008000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo_infinite.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo_infinite.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "utilities"],
+  "lang": "fr",
+  "dir": "ltr"
+} 
