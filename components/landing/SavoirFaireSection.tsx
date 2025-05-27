@@ -90,7 +90,7 @@ const SavoirFaireSection = () => {
                 {rgeImages.map((cert, index) => (
                   <div 
                     key={index}
-                    className="flex-shrink-0 w-14 h-14 md:w-18 md:h-18 bg-white rounded-xl p-2 md:p-2.5 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100 group cursor-pointer"
+                    className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 bg-white rounded-xl p-2 md:p-2.5 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100 group cursor-pointer"
                   >
                     <img 
                       src={cert.src}
@@ -106,7 +106,7 @@ const SavoirFaireSection = () => {
                 {rgeImages.map((cert, index) => (
                   <div 
                     key={`dup-${index}`}
-                    className="flex-shrink-0 w-14 h-14 md:w-18 md:h-18 bg-white rounded-xl p-2 md:p-2.5 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100 group cursor-pointer"
+                    className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 bg-white rounded-xl p-2 md:p-2.5 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100 group cursor-pointer"
                   >
                     <img 
                       src={cert.src}
@@ -122,7 +122,7 @@ const SavoirFaireSection = () => {
                 {rgeImages.map((cert, index) => (
                   <div 
                     key={`dup2-${index}`}
-                    className="flex-shrink-0 w-14 h-14 md:w-18 md:h-18 bg-white rounded-xl p-2 md:p-2.5 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100 group cursor-pointer"
+                    className="flex-shrink-0 w-16 h-16 md:w-20 md:h-20 bg-white rounded-xl p-2 md:p-2.5 shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 border border-gray-100 group cursor-pointer"
                   >
                     <img 
                       src={cert.src}
