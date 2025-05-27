@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const HeaderLanding = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,163 +31,120 @@ const HeaderLanding = () => {
         }`}>
           {/* Logo et nom à gauche */}
           <div className="flex items-center space-x-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="/logo.png" 
-              alt="France Solaire Logo" 
-              className={`transition-all duration-300 ${isScrolled ? 'h-10' : 'h-12'} w-auto`}
-            />
+            <Link href="/">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img 
+                src="/logo.png" 
+                alt="France Solaire Logo" 
+                className={`transition-all duration-300 hover:opacity-80 cursor-pointer ${
+                  isScrolled 
+                    ? 'h-6 md:h-8' 
+                    : 'h-7 md:h-10'
+                } w-auto`}
+              />
+            </Link>
           </div>
 
           {/* Navigation au centre */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             <a 
               href="#hero" 
-              className={`transition-colors font-medium ${
+              className={`transition-colors text-sm font-normal ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-green-600' 
-                  : 'text-gray-800 hover:text-green-600'
+                  ? 'text-gray-600 hover:text-green-600' 
+                  : 'text-gray-700 hover:text-green-600'
               }`}
             >
               Accueil
             </a>
             <a 
               href="#prestations" 
-              className={`transition-colors font-medium ${
+              className={`transition-colors text-sm font-normal ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-green-600' 
-                  : 'text-gray-800 hover:text-green-600'
+                  ? 'text-gray-600 hover:text-green-600' 
+                  : 'text-gray-700 hover:text-green-600'
               }`}
             >
               Prestations
             </a>
             <a 
-              href="#intervention" 
-              className={`transition-colors font-medium ${
+              href="#savoir-faire" 
+              className={`transition-colors text-sm font-normal ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-green-600' 
-                  : 'text-gray-800 hover:text-green-600'
+                  ? 'text-gray-600 hover:text-green-600' 
+                  : 'text-gray-700 hover:text-green-600'
+              }`}
+            >
+              Savoir-faire
+            </a>
+            <a 
+              href="#gallery" 
+              className={`transition-colors text-sm font-normal ${
+                isScrolled 
+                  ? 'text-gray-600 hover:text-green-600' 
+                  : 'text-gray-700 hover:text-green-600'
+              }`}
+            >
+              Réalisations
+            </a>
+            <a 
+              href="#testimonials" 
+              className={`transition-colors text-sm font-normal ${
+                isScrolled 
+                  ? 'text-gray-600 hover:text-green-600' 
+                  : 'text-gray-700 hover:text-green-600'
+              }`}
+            >
+              Avis clients
+            </a>
+            <a 
+              href="#intervention" 
+              className={`transition-colors text-sm font-normal ${
+                isScrolled 
+                  ? 'text-gray-600 hover:text-green-600' 
+                  : 'text-gray-700 hover:text-green-600'
               }`}
             >
               Zones d'intervention
             </a>
             <a 
               href="#contact" 
-              className={`transition-colors font-medium ${
+              className={`transition-colors text-sm font-normal ${
                 isScrolled 
-                  ? 'text-gray-700 hover:text-green-600' 
-                  : 'text-gray-800 hover:text-green-600'
+                  ? 'text-gray-600 hover:text-green-600' 
+                  : 'text-gray-700 hover:text-green-600'
               }`}
             >
               Contact
             </a>
           </div>
 
-          {/* Bouton téléphone toujours vert - Desktop */}
-          <div className="hidden md:flex items-center">
+          {/* Bouton téléphone - Desktop */}
+          <div className="hidden lg:block">
             <a 
-              href="tel:0123456789"
-              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl"
+              href="tel:0788066712"
+              className="btn-phone-animated inline-flex items-center px-6 py-3 bg-white font-bold rounded-xl border-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              <svg className="w-5 h-5 mr-3 text-current" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd"/>
               </svg>
-              <span>01 23 45 67 89</span>
+              <span className="text-sm font-extrabold">07 88 06 67 12</span>
             </a>
           </div>
 
-          {/* Menu burger pour mobile avec bouton téléphone */}
-          <div className="md:hidden flex items-center space-x-3">
-            {/* Bouton téléphone mobile - toujours vert */}
+          {/* Bouton téléphone - Mobile et Tablette */}
+          <div className="lg:hidden">
             <a 
-              href="tel:0123456789"
-              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2.5 rounded-full transition-all duration-300 flex items-center space-x-1 shadow-lg text-sm"
+              href="tel:0788066712"
+              className="btn-phone-animated inline-flex items-center px-2.5 sm:px-4 py-2 sm:py-2.5 bg-white font-bold rounded-lg sm:rounded-xl border-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 whitespace-nowrap"
             >
-              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-current" fill="currentColor" viewBox="0 0 24 24">
+                <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd"/>
               </svg>
-              <span className="hidden sm:inline">01 23 45 67 89</span>
-              <span className="sm:hidden">Tel</span>
+              <span className="text-xs sm:text-sm font-extrabold">07 88 06 67 12</span>
             </a>
-            <button 
-              type="button"
-              className={`focus:outline-none transition-colors ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-green-600' 
-                  : 'text-gray-800 hover:text-green-600'
-              }`}
-              onClick={() => {
-                const mobileMenu = document.getElementById('mobile-menu');
-                mobileMenu?.classList.toggle('hidden');
-              }}
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
           </div>
         </nav>
-
-        {/* Menu mobile */}
-        <div id="mobile-menu" className={`hidden lg:hidden pb-4 border-t ${
-          isScrolled ? 'border-gray-200' : 'border-white/20'
-        }`}>
-          <div className="flex flex-col space-y-3 pt-4">
-            <a 
-              href="#hero" 
-              className={`transition-colors font-medium ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-green-600' 
-                  : 'text-gray-800 hover:text-green-600'
-              }`}
-            >
-              Accueil
-            </a>
-            <a 
-              href="#prestations" 
-              className={`transition-colors font-medium ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-green-600' 
-                  : 'text-gray-800 hover:text-green-600'
-              }`}
-            >
-              Prestations
-            </a>
-            <a 
-              href="#intervention" 
-              className={`transition-colors font-medium ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-green-600' 
-                  : 'text-gray-800 hover:text-green-600'
-              }`}
-            >
-              Zones d'intervention
-            </a>
-            <a 
-              href="#contact" 
-              className={`transition-colors font-medium ${
-                isScrolled 
-                  ? 'text-gray-700 hover:text-green-600' 
-                  : 'text-gray-800 hover:text-green-600'
-              }`}
-            >
-              Contact
-            </a>
-            <div className={`pt-3 border-t ${
-              isScrolled ? 'border-gray-200' : 'border-white/20'
-            }`}>
-              <a 
-                href="tel:0123456789"
-                className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg w-full"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                <span>Appeler : 01 23 45 67 89</span>
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </header>
   );

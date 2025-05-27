@@ -79,3 +79,95 @@ body {
   transform: scale(1.2);
   box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
 }
+
+/* Smooth scrolling et offset pour header fixe */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset pour les sections avec un header fixe */
+*[id] {
+  scroll-margin-top: 80px; /* Ajuste selon la hauteur de ton header */
+}
+
+@media (max-width: 768px) {
+  *[id] {
+    scroll-margin-top: 70px; /* Moins d'espace sur mobile */
+  }
+}
+
+/* Animation de changement de couleurs pour les boutons d'appel */
+@keyframes colorCycle {
+  0% {
+    border-color: #f59e0b; /* Yellow-500 */
+    color: #f59e0b; /* Yellow-500 */
+  }
+  33% {
+    border-color: #ea580c; /* Orange-600 */
+    color: #ea580c; /* Orange-600 */
+  }
+  66% {
+    border-color: #059669; /* Green-600 */
+    color: #059669; /* Green-600 */
+  }
+  100% {
+    border-color: #f59e0b; /* Yellow-500 */
+    color: #f59e0b; /* Yellow-500 */
+  }
+}
+
+.btn-phone-animated {
+  background-color: white !important;
+  animation: colorCycle 6s ease-in-out infinite;
+}
+
+.btn-phone-animated:hover {
+  animation-play-state: paused;
+  background-color: white !important;
+  border-color: #16a34a !important; /* Green-600 */
+  color: #16a34a !important; /* Green-600 */
+}
+
+/* Animations pour le carrousel RGE */
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+.animate-scroll-slow {
+  animation: scroll-horizontal 30s linear infinite;
+  width: max-content;
+}
+
+.pause-animation:hover .animate-scroll-slow {
+  animation-play-state: paused;
+}
+
+/* Animation blob décorative */
+@keyframes blob {
+  0%, 100% { 
+    transform: translate(0px, 0px) scale(1); 
+  }
+  33% { 
+    transform: translate(30px, -50px) scale(1.1); 
+  }
+  66% { 
+    transform: translate(-20px, 20px) scale(0.9); 
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}

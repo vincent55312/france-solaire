@@ -1,0 +1,54 @@
+{
+  "testimonials": [
+    {
+      "name": "Yoann Tall",
+      "location": "Local Guide",
+      "rating": 5,
+      "comment": "J'ai été très bien conseillé par Arthur sur la totalité du projet. L'entreprise s'occupe de toutes les démarches: Demande Mairie et consuel. Aucune sous traitance, les ouvriers sont des locaux. Je recommande",
+      "project": "Projet complet",
+      "date": "Décembre 2024",
+      "reviews": "27 avis",
+      "photos": "3 photos"
+    },
+    {
+      "name": "Bond Stf",
+      "location": "Local Guide", 
+      "rating": 5,
+      "comment": "Une entreprise très sérieuse. Et merci au patron et son équipe pour votre professionnalisme et votre écoute 👍 Je recommande à 100% 🙂",
+      "project": "Travaux avril",
+      "date": "Novembre 2024",
+      "reviews": "30 avis",
+      "photos": null
+    },
+    {
+      "name": "Maud",
+      "location": "Cliente",
+      "rating": 5,
+      "comment": "Très satisfaite des travaux réalisés par cette entreprise, de plus très réactif lors de nos échanges. Je recommande !",
+      "project": "Travaux mars",
+      "date": "Octobre 2024", 
+      "reviews": "1 avis",
+      "photos": null
+    },
+    {
+      "name": "Mélina Salomé",
+      "location": "Cliente",
+      "rating": 5,
+      "comment": "Merci pour votre professionnalisme je suis contente des travaux effectués !",
+      "project": "Travaux décembre",
+      "date": "Septembre 2024",
+      "reviews": "12 avis",
+      "photos": null
+    },
+    {
+      "name": "Alexandre Paris",
+      "location": "Local Guide",
+      "rating": 5,
+      "comment": "Merci pour les travaux soigneux et de qualités.",
+      "project": "Travaux décembre", 
+      "date": "Août 2024",
+      "reviews": "25 avis",
+      "photos": null
+    }
+  ]
+} 

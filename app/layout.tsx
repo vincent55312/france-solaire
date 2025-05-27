@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import CookieBanner from "@/components/CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -111,7 +112,7 @@ export default function RootLayout({
               name: "France Solaire",
               description: "Expert en installation de panneaux solaires photovoltaïques et isolation thermique",
               url: "https://francesolaire.com",
-              telephone: "+33123456789",
+              telephone: "+33788066712",
               email: "contact@francesolaire.com",
               address: {
                 "@type": "PostalAddress",
@@ -165,6 +166,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

@@ -1,0 +1,310 @@
+{
+    "services": [
+      {
+        "slug": "installation-panneaux-solaires-photovoltaiques",
+        "title": "Installation de Panneaux Solaires Photovoltaïques",
+        "tags": ["panneaux solaires", "photovoltaïque", "énergie renouvelable", "autoconsommation", "électricité verte"],
+        "description": "Installation professionnelle de panneaux solaires photovoltaïques pour votre habitation. Nos experts vous accompagnent dans votre projet d'autoconsommation électrique avec possibilité de revente du surplus. Solution écologique et économique pour réduire vos factures d'électricité tout en valorisant votre patrimoine immobilier. Étude personnalisée, devis gratuit et accompagnement complet des démarches administratives."
+      },
+      {
+        "slug": "autoconsommation-solaire-revente-surplus",
+        "title": "Autoconsommation Solaire avec Revente du Surplus",
+        "tags": ["autoconsommation", "revente surplus", "EDF OA", "contrat d'achat", "rentabilité solaire"],
+        "description": "Optimisez votre installation solaire avec notre solution d'autoconsommation et revente du surplus à EDF Obligation d'Achat. Consommez directement l'électricité produite par vos panneaux et vendez le surplus pour rentabiliser votre investissement. Accompagnement complet pour les démarches de raccordement et signature du contrat de rachat sur 20 ans."
+      },
+      {
+        "slug": "isolation-thermique-exterieure-ite",
+        "title": "Isolation Thermique par l'Extérieur (ITE)",
+        "tags": ["isolation extérieure", "ITE", "économies d'énergie", "rénovation énergétique", "performance thermique"],
+        "description": "Améliorer les performances énergétiques de votre habitation avec notre service d'Isolation Thermique par l'Extérieur (ITE). Cette technique permet de supprimer les ponts thermiques, réduire vos factures de chauffage jusqu'à 25% et valoriser votre bien immobilier. Matériaux certifiés, pose professionnelle et finitions esthétiques personnalisables selon vos goûts."
+      },
+      {
+        "slug": "isolation-thermique-interieure-iti",
+        "title": "Isolation Thermique par l'Intérieur (ITI)",
+        "tags": ["isolation intérieure", "ITI", "cloisons", "doublage", "confort thermique"],
+        "description": "Solution d'Isolation Thermique par l'Intérieur (ITI) adaptée à vos contraintes architecturales. Technique efficace pour améliorer le confort thermique de vos pièces à vivre tout en préservant l'aspect extérieur de votre façade. Matériaux performants, mise en œuvre soignée et respect des normes en vigueur pour un résultat durable."
+      },
+      {
+        "slug": "isolation-combles-perdus-amenageables",
+        "title": "Isolation des Combles Perdus et Aménageables",
+        "tags": ["isolation combles", "combles perdus", "combles aménageables", "ouate de cellulose", "laine de roche"],
+        "description": "Isolation performante de vos combles perdus ou aménageables pour réduire jusqu'à 30% vos déperditions thermiques. Techniques de soufflage, épandage ou pose de rouleaux selon la configuration de votre toiture. Matériaux écologiques et certifiés pour un confort optimal été comme hiver. Intervention rapide et propre avec garantie décennale."
+      },
+      {
+        "slug": "pompe-chaleur-air-air-climatisation",
+        "title": "Pompe à Chaleur Air/Air - Climatisation Réversible",
+        "tags": ["pompe à chaleur", "PAC air-air", "climatisation", "chauffage reversible", "économies énergie"],
+        "description": "Installation de pompe à chaleur air/air pour un chauffage économique et une climatisation efficace. Système réversible qui assure votre confort toute l'année avec des économies d'énergie jusqu'à 60% par rapport au chauffage électrique. Technologie inverter, fonctionnement silencieux et télécommande pour un contrôle optimal de la température."
+      },
+      {
+        "slug": "pompe-chaleur-air-eau-chauffage-central",
+        "title": "Pompe à Chaleur Air/Eau pour Chauffage Central",
+        "tags": ["PAC air-eau", "chauffage central", "radiateurs", "plancher chauffant", "eau chaude sanitaire"],
+        "description": "Pompe à chaleur air/eau haute performance pour alimenter votre système de chauffage central et production d'eau chaude sanitaire. Compatible avec vos radiateurs existants ou plancher chauffant. Technologie éprouvée pour des économies d'énergie substantielles et un confort optimal dans toutes les pièces de votre logement."
+      },
+      {
+        "slug": "pompe-chaleur-hybride-gaz-electrique",
+        "title": "Pompe à Chaleur Hybride Gaz-Électrique",
+        "tags": ["PAC hybride", "gaz", "électrique", "double énergie", "optimisation coûts"],
+        "description": "Solution de pompe à chaleur hybride combinant les avantages du gaz et de l'électricité. Système intelligent qui sélectionne automatiquement l'énergie la plus économique selon les conditions climatiques et les tarifs. Performance optimale par tous temps avec une consommation d'énergie maîtrisée et des coûts de fonctionnement réduits."
+      },
+      {
+        "slug": "poele-granules-pellets-haute-performance",
+        "title": "Poêle à Granulés (Pellets) Haute Performance",
+        "tags": ["poêle granulés", "pellets", "chauffage bois", "rendement élevé", "programmable"],
+        "description": "Installation de poêle à granulés haute performance pour un chauffage écologique et économique. Rendement exceptionnel de plus de 85%, programmation automatique et autonomie prolongée. Combustible renouvelable et neutre en CO2 pour un chauffage respectueux de l'environnement. Design moderne et flamme authentique pour l'ambiance chaleureuse du bois."
+      },
+      {
+        "slug": "poele-bois-traditionnel-moderne",
+        "title": "Poêle à Bois Traditionnel et Moderne",
+        "tags": ["poêle bois", "chauffage traditionnel", "bûches", "fonte", "acier"],
+        "description": "Large gamme de poêles à bois alliant tradition et modernité pour un chauffage authentique et performant. Modèles en fonte ou acier avec chambres de combustion optimisées pour un rendement maximal. Installation conforme aux normes DTU avec tubage et isolation pour une sécurité optimale et des performances durables."
+      },
+      {
+        "slug": "insert-granules-cheminee-existante",
+        "title": "Insert à Granulés pour Cheminée Existante",
+        "tags": ["insert granulés", "rénovation cheminée", "foyer fermé", "ventilation", "rendement"],
+        "description": "Transformation de votre cheminée ouverte en système de chauffage performant avec un insert à granulés. Solution idéale pour améliorer le rendement de votre foyer existant tout en conservant le plaisir de la flamme. Ventilation intégrée pour une diffusion homogène de la chaleur dans toute votre habitation."
+      },
+      {
+        "slug": "insert-bois-foyer-ferme",
+        "title": "Insert à Bois - Foyer Fermé",
+        "tags": ["insert bois", "foyer fermé", "rendement élevé", "vitre panoramique", "récupérateur chaleur"],
+        "description": "Insert à bois haute performance pour transformer votre cheminée ouverte en véritable système de chauffage. Foyer fermé avec vitre panoramique pour profiter du spectacle des flammes tout en bénéficiant d'un rendement optimal. Récupérateur de chaleur et système de ventilation pour chauffer efficacement plusieurs pièces."
+      },
+      {
+        "slug": "chaudiere-hybride-gaz-pompe-chaleur",
+        "title": "Chaudière Hybride Gaz + Pompe à Chaleur",
+        "tags": ["chaudière hybride", "gaz condensation", "PAC intégrée", "modulation", "efficacité"],
+        "description": "Chaudière hybride combinant une chaudière gaz condensation et une pompe à chaleur intégrée. Système intelligent qui optimise automatiquement l'utilisation des deux technologies selon les conditions extérieures. Performance énergétique exceptionnelle et réduction significative des émissions de CO2 par rapport aux solutions traditionnelles."
+      },
+      {
+        "slug": "chaudiere-gaz-condensation-haute-performance",
+        "title": "Chaudière Gaz à Condensation Haute Performance",
+        "tags": ["chaudière condensation", "gaz naturel", "haut rendement", "modulation", "économies"],
+        "description": "Chaudière gaz à condensation de dernière génération pour un chauffage performant et économique. Technologie de condensation qui récupère la chaleur des fumées pour un rendement supérieur à 100%. Modulation de puissance pour s'adapter aux besoins réels de votre logement et optimiser la consommation de gaz."
+      },
+      {
+        "slug": "ballon-eau-chaude-thermodynamique",
+        "title": "Ballon d'Eau Chaude Thermodynamique",
+        "tags": ["ballon thermodynamique", "eau chaude sanitaire", "pompe à chaleur", "économies", "écologique"],
+        "description": "Chauffe-eau thermodynamique utilisant les calories de l'air ambiant pour produire votre eau chaude sanitaire. Économies d'énergie jusqu'à 70% par rapport à un chauffe-eau électrique classique. Installation simple, fonctionnement silencieux et production d'eau chaude en continu pour le confort de toute la famille."
+      },
+      {
+        "slug": "toiture-tuiles-terre-cuite-ardoise",
+        "title": "Réfection Toiture - Tuiles Terre Cuite et Ardoise",
+        "tags": ["toiture", "tuiles terre cuite", "ardoise", "réfection", "étanchéité"],
+        "description": "Réfection complète ou partielle de votre toiture avec des matériaux traditionnels de qualité. Tuiles terre cuite ou ardoise naturelle pour une esthétique authentique et une durabilité exceptionnelle. Pose selon les règles de l'art avec garantie d'étanchéité. Respect du style architectural régional et des contraintes urbanistiques."
+      },
+      {
+        "slug": "couverture-zinc-joint-debout",
+        "title": "Couverture Zinc à Joint Debout",
+        "tags": ["couverture zinc", "joint debout", "étanchéité", "moderne", "durabilité"],
+        "description": "Couverture zinc à joint debout pour une toiture moderne et performante. Matériau noble offrant une excellente résistance aux intempéries et une esthétique contemporaine. Mise en œuvre par des couvreurs spécialisés selon les techniques traditionnelles pour garantir l'étanchéité et la longévité de votre toiture."
+      },
+      {
+        "slug": "membrane-epdm-toiture-terrasse",
+        "title": "Membrane EPDM pour Toiture Terrasse",
+        "tags": ["EPDM", "toiture terrasse", "étanchéité", "membrane", "toit plat"],
+        "description": "Étanchéité de toiture terrasse avec membrane EPDM haute qualité. Solution durable et économique pour l'étanchéité des toits plats résidentiels et commerciaux. Résistance exceptionnelle aux UV, variations climatiques et déchirures. Installation rapide et propre avec garantie d'étanchéité longue durée."
+      },
+      {
+        "slug": "bac-acier-panneaux-sandwich-isolation",
+        "title": "Bac Acier et Panneaux Sandwich Isolants",
+        "tags": ["bac acier", "panneaux sandwich", "isolation intégrée", "toiture", "bardage"],
+        "description": "Pose de bac acier et panneaux sandwich isolants pour toiture et bardage. Solution moderne combinant étanchéité, isolation et esthétique en une seule opération. Large choix de coloris et finitions pour s'adapter à tous les styles architecturaux. Performance thermique optimale et mise en œuvre rapide."
+      },
+      {
+        "slug": "fenetres-pvc-double-triple-vitrage",
+        "title": "Fenêtres PVC Double et Triple Vitrage",
+        "tags": ["fenêtres PVC", "double vitrage", "triple vitrage", "isolation phonique", "sécurité"],
+        "description": "Menuiseries PVC haute performance avec double ou triple vitrage pour améliorer l'isolation thermique et phonique de votre habitation. Profiles renforcés, ferrures de sécurité et vitrages performants pour un confort optimal. Large gamme de coloris et formes pour s'adapter à tous les styles architecturaux."
+      },
+      {
+        "slug": "fenetres-aluminium-design-moderne",
+        "title": "Fenêtres Aluminium Design Moderne",
+        "tags": ["fenêtres aluminium", "design moderne", "grandes dimensions", "rupture pont thermique", "couleurs"],
+        "description": "Menuiseries aluminium à rupture de pont thermique pour un design moderne et des performances énergétiques optimales. Possibilité de grandes dimensions et formes spéciales. Large palette de coloris et finitions pour personnaliser votre façade. Durabilité exceptionnelle et entretien minimal."
+      },
+      {
+        "slug": "volets-roulants-electriques-solaires",
+        "title": "Volets Roulants Électriques et Solaires",
+        "tags": ["volets roulants", "motorisation", "électrique", "solaire", "domotique"],
+        "description": "Installation de volets roulants motorisés électriques ou solaires pour un confort d'utilisation optimal. Commande centralisée, programmation automatique et intégration domotique possible. Isolation renforcée et sécurité anti-effraction pour protéger votre habitation. Alimentation solaire autonome pour les rénovations sans reprise électrique."
+      },
+      {
+        "slug": "portes-entree-securisee-isolation",
+        "title": "Portes d'Entrée Sécurisées et Isolantes",
+        "tags": ["porte d'entrée", "sécurité", "isolation", "blindage", "design"],
+        "description": "Portes d'entrée alliant sécurité, isolation et esthétique pour protéger et embellir votre habitation. Cylindres haute sécurité, isolation thermique renforcée et large choix de designs contemporains ou traditionnels. Personnalisation complète des dimensions, coloris et accessoires selon vos préférences."
+      },
+      {
+        "slug": "portes-vitrees-coulissantes-galandage",
+        "title": "Portes Vitrées Coulissantes à Galandage",
+        "tags": ["portes vitrées", "coulissantes", "galandage", "baies vitrées", "luminosité"],
+        "description": "Portes vitrées coulissantes et baies à galandage pour optimiser l'espace et la luminosité de votre intérieur. Solutions sur mesure avec vitrages performants et systèmes de coulissement haute qualité. Ouverture totale pour une continuité parfaite entre intérieur et extérieur. Étanchéité optimale et facilité d'utilisation."
+      },
+      {
+        "slug": "portes-garage-sectionnelles-enroulables",
+        "title": "Portes de Garage Sectionnelles et Enroulables",
+        "tags": ["porte garage", "sectionnelle", "enroulable", "motorisation", "isolation"],
+        "description": "Portes de garage sectionnelles ou enroulables avec motorisation intégrée pour un accès facile et sécurisé. Isolation thermique renforcée, systèmes de sécurité anti-intrusion et commande à distance. Adaptation parfaite aux dimensions de votre garage avec finitions personnalisables selon l'architecture de votre habitation."
+      },
+      {
+        "slug": "renovation-energetique-globale",
+        "title": "Rénovation Énergétique Globale",
+        "tags": ["rénovation énergétique", "audit", "performance", "subventions", "BBC"],
+        "description": "Accompagnement complet pour votre rénovation énergétique globale. Audit énergétique, conception du projet, coordination des travaux et suivi des performances. Objectif BBC rénovation avec gains énergétiques significatifs. Optimisation des aides financières MaPrimeRénov', CEE et autres dispositifs pour minimiser votre reste à charge."
+      },
+      {
+        "slug": "audit-energetique-dpe-ameliore",
+        "title": "Audit Énergétique et DPE Amélioré",
+        "tags": ["audit énergétique", "DPE", "diagnostic", "préconisations", "économies"],
+        "description": "Audit énergétique complet de votre habitation avec diagnostic de performance énergétique (DPE) et préconisations détaillées d'amélioration. Analyse thermique approfondie, identification des déperditions et chiffrage des gains potentiels. Rapport détaillé pour optimiser vos investissements en rénovation énergétique et maximiser les économies."
+      },
+      {
+        "slug": "ventilation-vmc-double-flux",
+        "title": "VMC Double Flux avec Récupération de Chaleur",
+        "tags": ["VMC double flux", "ventilation", "récupération chaleur", "qualité air", "économies"],
+        "description": "Installation de VMC double flux pour renouveler l'air de votre habitation tout en récupérant la chaleur. Système performant qui assure une qualité d'air optimale et des économies de chauffage jusqu'à 15%. Filtration de l'air entrant, régulation automatique et fonctionnement silencieux pour votre confort."
+      },
+      {
+        "slug": "bardage-bois-composite-facade",
+        "title": "Bardage Bois et Composite pour Façade",
+        "tags": ["bardage", "bois", "composite", "façade", "isolation"],
+        "description": "Habillage de façade avec bardage bois naturel ou composite pour allier esthétique et protection. Large choix d'essences et de finitions pour personnaliser l'aspect de votre habitation. Pose sur ossature avec isolation thermique intégrée possible. Traitement et entretien selon les règles de l'art pour une durabilité optimale."
+      },
+      {
+        "slug": "plancher-chauffant-electrique-hydraulique",
+        "title": "Plancher Chauffant Électrique et Hydraulique",
+        "tags": ["plancher chauffant", "chauffage sol", "confort", "économies", "répartition"],
+        "description": "Installation de plancher chauffant électrique ou hydraulique pour un confort thermique optimal et homogène. Chaleur douce répartie uniformément, économies d'énergie et espace libéré sans radiateurs. Compatible avec tous types de revêtements de sol. Régulation pièce par pièce et programmation pour optimiser la consommation."
+      },
+      {
+        "slug": "store-banne-protection-solaire",
+        "title": "Store Banne et Protection Solaire",
+        "tags": ["store banne", "protection solaire", "terrasse", "motorisation", "toile"],
+        "description": "Store banne motorisé pour protéger votre terrasse et réduire les apports solaires dans votre habitation. Large gamme de toiles techniques résistantes aux UV et intempéries. Capteurs automatiques de vent et soleil, éclairage LED intégré et commande domotique possible. Amélioration du confort extérieur et économies de climatisation."
+      },
+      {
+        "slug": "pergola-bioclimatique-lames-orientables",
+        "title": "Pergola Bioclimatique à Lames Orientables",
+        "tags": ["pergola bioclimatique", "lames orientables", "protection", "ventilation", "design"],
+        "description": "Pergola bioclimatique avec lames orientables pour un contrôle optimal du soleil et de la ventilation. Structure aluminium design avec lames ajustables selon les conditions climatiques. Protection contre la pluie, gestion de la luminosité et création d'un espace de vie extérieur confortable toute l'année."
+      },
+      {
+        "slug": "verriere-atelier-cloison-vitree",
+        "title": "Verrière d'Atelier et Cloison Vitrée",
+        "tags": ["verrière", "cloison vitrée", "luminosité", "séparation", "industriel"],
+        "description": "Verrière d'atelier et cloisons vitrées pour séparer vos espaces tout en conservant la luminosité. Style industriel tendance avec profilés métalliques et vitrages sur mesure. Solution idéale pour créer des bureaux, séparer cuisine et salon ou aménager une mezzanine. Fabrication sur mesure et pose soignée."
+      },
+      {
+        "slug": "escalier-bois-metal-renovation",
+        "title": "Escalier Bois et Métal - Rénovation",
+        "tags": ["escalier", "bois", "métal", "rénovation", "sur mesure"],
+        "description": "Création et rénovation d'escaliers en bois et métal sur mesure. Escaliers droits, quart tournant ou colimaçon selon vos contraintes d'espace. Matériaux nobles, finitions soignées et respect des normes de sécurité. Rénovation d'escaliers existants avec habillage moderne et mise aux normes."
+      },
+      {
+        "slug": "carport-abri-voiture-solaire",
+        "title": "Carport et Abri Voiture avec Panneaux Solaires",
+        "tags": ["carport", "abri voiture", "panneaux solaires", "protection", "énergie"],
+        "description": "Carport design avec toiture équipée de panneaux solaires pour protéger votre véhicule tout en produisant de l'électricité verte. Structure aluminium ou bois, dimensionnement sur mesure et intégration architecturale soignée. Solution 2 en 1 pour stationnement couvert et production d'énergie renouvelable."
+      },
+      {
+        "slug": "climatisation-reversible-multi-split",
+        "title": "Climatisation Réversible Multi-Split",
+        "tags": ["climatisation", "multi-split", "réversible", "zones", "efficacité"],
+        "description": "Système de climatisation réversible multi-split pour climatiser et chauffer plusieurs pièces indépendamment. Une unité extérieure pour plusieurs unités intérieures avec régulation individuelle. Technologies inverter pour un fonctionnement économique et silencieux. Installation professionnelle avec mise en service et formation à l'utilisation."
+      },
+      {
+        "slug": "domotique-maison-connectee-energie",
+        "title": "Domotique et Maison Connectée Énergétique",
+        "tags": ["domotique", "maison connectée", "gestion énergie", "automatisation", "pilotage"],
+        "description": "Solutions domotiques pour optimiser la consommation énergétique de votre habitation. Pilotage intelligent du chauffage, éclairage, volets et appareils électriques. Programmation automatique, détection de présence et suivi des consommations en temps réel. Application mobile pour contrôler votre maison à distance et réaliser des économies."
+      },
+      {
+        "slug": "chaudiere-granules-bois-automatique",
+        "title": "Chaudière à Granulés de Bois Automatique",
+        "tags": ["chaudière granulés", "chauffage bois", "automatique", "silo", "écologique"],
+        "description": "Chaudière à granulés de bois automatique pour un chauffage central écologique et économique. Alimentation automatique depuis silo, régulation performante et rendement élevé. Combustible renouvelable et neutre en CO2 avec coûts de fonctionnement maîtrisés. Installation complète avec silo de stockage et système de convoyage."
+      },
+      {
+        "slug": "recuperateur-eau-pluie-cuve",
+        "title": "Récupérateur d'Eau de Pluie et Cuve de Stockage",
+        "tags": ["récupération eau", "cuve", "économies", "arrosage", "écologique"],
+        "description": "Installation de système de récupération d'eau de pluie avec cuve de stockage pour réduire votre consommation d'eau potable. Utilisation pour arrosage, nettoyage extérieur et WC. Filtration adaptée, pompage automatique et gestion des trop-pleins. Solution écologique et économique pour préserver cette ressource précieuse."
+      },
+      {
+        "slug": "pompe-puits-forage-eau",
+        "title": "Pompe de Puits et Forage pour Eau",
+        "tags": ["pompe puits", "forage", "eau", "autonomie", "irrigation"],
+        "description": "Installation de pompes de puits et systèmes de forage pour l'autonomie en eau. Solutions adaptées aux besoins domestiques, arrosage et irrigation. Pompes immergées ou de surface avec automatisation et protection contre le manque d'eau. Analyses et traitement de l'eau selon les normes en vigueur."
+      },
+      {
+        "slug": "terrasse-bois-composite-amenagement",
+        "title": "Terrasse Bois et Composite - Aménagement Extérieur",
+        "tags": ["terrasse", "bois", "composite", "aménagement", "extérieur"],
+        "description": "Création de terrasses en bois naturel ou composite pour sublimer vos espaces extérieurs. Matériaux durables résistants aux intempéries avec finitions soignées. Conception sur mesure avec intégration d'éclairage, garde-corps et végétalisation. Préparation du terrain, évacuation des eaux et pose selon les règles de l'art."
+      },
+      {
+        "slug": "cloture-portail-automatique-securite",
+        "title": "Clôture et Portail Automatique Sécurisé",
+        "tags": ["clôture", "portail", "automatique", "sécurité", "contrôle accès"],
+        "description": "Installation de clôtures et portails automatiques pour sécuriser votre propriété avec élégance. Large gamme de matériaux et styles pour s'adapter à votre architecture. Motorisation fiable, systèmes de sécurité intégrés et contrôle d'accès par badge, télécommande ou visiophone. Entretien et dépannage assurés."
+      },
+      {
+        "slug": "piscine-pompe-chaleur-chauffage",
+        "title": "Pompe à Chaleur pour Piscine et Chauffage",
+        "tags": ["PAC piscine", "chauffage piscine", "prolongation saison", "économies", "confort"],
+        "description": "Pompe à chaleur spécialement conçue pour le chauffage de piscine. Prolongez votre saison de baignade avec un système économique et écologique. Coefficient de performance élevé, fonctionnement silencieux et régulation automatique de la température. Installation et mise en service par nos techniciens spécialisés."
+      },
+      {
+        "slug": "adoucisseur-eau-filtration-traitement",
+        "title": "Adoucisseur d'Eau et Système de Filtration",
+        "tags": ["adoucisseur eau", "filtration", "calcaire", "qualité eau", "protection"],
+        "description": "Installation d'adoucisseurs d'eau et systèmes de filtration pour améliorer la qualité de votre eau domestique. Protection de vos installations contre le calcaire, amélioration du confort et réduction des produits d'entretien. Technologies modernes avec régénération automatique et consommation de sel optimisée."
+      },
+      {
+        "slug": "borne-recharge-vehicule-electrique",
+        "title": "Borne de Recharge pour Véhicule Électrique",
+        "tags": ["borne recharge", "véhicule électrique", "wallbox", "mobilité", "écologie"],
+        "description": "Installation de bornes de recharge pour véhicules électriques à domicile. Solutions Wallbox sécurisées avec recharge rapide et pilotage intelligent. Installation conforme aux normes avec protection électrique adaptée. Possibilité de couplage avec installation solaire pour une recharge 100% verte et économique."
+      },
+      {
+        "slug": "eclairage-led-economique-intelligent",
+        "title": "Éclairage LED Économique et Intelligent",
+        "tags": ["éclairage LED", "économies énergie", "intelligent", "domotique", "ambiance"],
+        "description": "Rénovation de l'éclairage avec technologie LED économique et intelligente. Réduction de la consommation électrique jusqu'à 80% avec qualité d'éclairage supérieure. Solutions connectées avec variation d'intensité, changement de couleur et programmation automatique. Éclairage d'ambiance et fonctionnel pour optimiser votre confort."
+      },
+      {
+        "slug": "detecteur-fumee-securite-incendie",
+        "title": "Détecteur de Fumée et Sécurité Incendie",
+        "tags": ["détecteur fumée", "sécurité incendie", "alarme", "protection", "norme"],
+        "description": "Installation de détecteurs de fumée et systèmes de sécurité incendie conformes aux normes en vigueur. Protection optimale de votre famille et de vos biens avec alertes sonores et visuelles. Détecteurs autonomes ou interconnectés avec centrale d'alarme. Maintenance et remplacement des piles inclus dans nos contrats de service."
+      },
+      {
+        "slug": "camera-surveillance-videophonie-securite",
+        "title": "Caméra de Surveillance et Visiophonie",
+        "tags": ["caméra surveillance", "visiophonie", "sécurité", "télésurveillance", "enregistrement"],
+        "description": "Systèmes de vidéosurveillance et visiophonie pour sécuriser votre habitation. Caméras haute définition avec vision nocturne, détection de mouvement et enregistrement. Contrôle à distance via smartphone et intégration possible avec systèmes d'alarme. Installation discrète et configuration personnalisée selon vos besoins de sécurité."
+      },
+      {
+        "slug": "alarme-intrusion-telepohne-gsm",
+        "title": "Alarme Anti-Intrusion avec Télétransmission GSM",
+        "tags": ["alarme intrusion", "télétransmission", "GSM", "détection", "dissuasion"],
+        "description": "Système d'alarme anti-intrusion avec télétransmission GSM pour une protection 24h/24. Détecteurs de mouvement, ouverture et bris de glace avec centrale programmable. Alerte immédiate sur votre téléphone et/ou société de télésurveillance. Installation professionnelle avec formation à l'utilisation et maintenance préventive."
+      },
+      {
+        "slug": "ravalement-facade-isolation-exterieure",
+        "title": "Ravalement de Façade avec Isolation Extérieure",
+        "tags": ["ravalement façade", "isolation extérieure", "embellissement", "protection", "valorisation"],
+        "description": "Ravalement de façade couplé à l'isolation thermique par l'extérieur pour embellir et améliorer la performance énergétique. Nettoyage, réparation et finition selon les matériaux d'origine. Large choix d'enduits et couleurs respectant les contraintes urbanistiques. Valorisation immobilière et économies d'énergie durables."
+      },
+      {
+        "slug": "etancheite-terrasse-balcon-protection",
+        "title": "Étanchéité Terrasse et Balcon - Protection",
+        "tags": ["étanchéité", "terrasse", "balcon", "infiltration", "résine"],
+        "description": "Étanchéité professionnelle de terrasses et balcons pour éliminer les infiltrations d'eau. Techniques adaptées selon le support avec membranes, résines ou systèmes d'étanchéité liquide. Préparation minutieuse du support, application selon les règles de l'art et garantie d'étanchéité. Protection durable contre les intempéries."
+      }
+    ]
+  }

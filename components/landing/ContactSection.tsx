@@ -1,204 +1,393 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
+import { useForm, Controller } from 'react-hook-form';
+import { FaCalendarAlt, FaClock, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaUser, FaCheck } from 'react-icons/fa';
+import { addDays, format, startOfDay, isSameDay, isBefore } from 'date-fns';
+import { fr } from 'date-fns/locale';
+
+interface FormData {
+  prenom: string;
+  nom: string;
+  email: string;
+  telephone: string;
+  ville: string;
+  prestation: string;
+  date?: Date;
+  creneau?: string;
+  message?: string;
+  rgpd: boolean;
+}
 
 const ContactSection = () => {
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedTime, setSelectedTime] = useState<string>('');
+  const [showDatePicker, setShowDatePicker] = useState(false);
+
+  const { register, handleSubmit, control, formState: { errors }, setValue } = useForm<FormData>();
+
+  // Générer les 14 prochains jours (exclure les dimanches)
+  const getAvailableDates = () => {
+    const dates = [];
+    let currentDate = startOfDay(new Date());
+    
+    while (dates.length < 14) {
+      // Exclure les dimanches (0 = dimanche)
+      if (currentDate.getDay() !== 0) {
+        dates.push(new Date(currentDate));
+      }
+      currentDate = addDays(currentDate, 1);
+    }
+    return dates;
+  };
+
+  const availableDates = getAvailableDates();
+
+  // Créneaux horaires disponibles
+  const timeSlots = [
+    { value: '08h00', label: '08h00', period: 'Matin' },
+    { value: '09h00', label: '09h00', period: 'Matin' },
+    { value: '10h00', label: '10h00', period: 'Matin' },
+    { value: '11h00', label: '11h00', period: 'Matin' },
+    { value: '14h00', label: '14h00', period: 'Après-midi' },
+    { value: '15h00', label: '15h00', period: 'Après-midi' },
+    { value: '16h00', label: '16h00', period: 'Après-midi' },
+    { value: '17h00', label: '17h00', period: 'Après-midi' },
+    { value: '18h00', label: '18h00', period: 'Soirée' }
+  ];
+
+  const onSubmit = (data: FormData) => {
+    console.log('Form data:', { ...data, date: selectedDate, creneau: selectedTime });
+    // Traitement du formulaire
+  };
+
+  const handleDateSelect = (date: Date) => {
+    setSelectedDate(date);
+    setValue('date', date);
+    setShowDatePicker(false);
+  };
+
+  const handleTimeSelect = (time: string) => {
+    setSelectedTime(time);
+    setValue('creneau', time);
+  };
+
   return (
-    <section id="contact" className="py-12 md:py-20 bg-gradient-to-br from-blue-50 to-cyan-100">
-      <div className="container mx-auto px-4">
-        <header className="text-center mb-12 md:mb-16">
-          {/* Icône dédiée pour la section */}
-          <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-blue-500 rounded-full shadow-lg mb-6">
-            <svg className="w-8 h-8 md:w-10 md:h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd"/>
-            </svg>
+    <section id="contact" className="relative py-10 md:py-16 bg-gradient-to-br from-green-50 to-emerald-100">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
+        <div className="text-center mb-10 md:mb-12">
+          <div className="w-14 h-14 md:w-16 md:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4">
+            <FaEnvelope className="w-7 h-7 md:w-8 md:h-8 text-green-600" />
           </div>
-          
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 text-blue-800">
-            Contactez-Nous
+          <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
+            Demande de devis gratuit
           </h2>
-          <p className="text-base md:text-xl text-blue-700 max-w-3xl mx-auto leading-relaxed">
-            Prêt à démarrer votre projet de rénovation énergétique ? Contactez notre équipe d'experts pour un devis personnalisé et gratuit.
-          </p>
-        </header>
+          <div className="max-w-3xl mx-auto">
+            <p className="text-sm md:text-base text-gray-600 mb-4">
+              Prêt à commencer votre projet de rénovation énergétique ? Contactez nos experts pour un devis gratuit et personnalisé.
+            </p>
+            <p className="text-xs md:text-sm text-green-600 font-medium">
+              Réponse garantie sous 24h • Devis gratuit • Déplacement offert
+            </p>
+          </div>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
-          {/* Informations de contact */}
-          <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl md:rounded-2xl shadow-lg border border-blue-200/50">
-            <h3 className="text-xl md:text-2xl font-bold text-blue-800 mb-4 md:mb-6">
-              Nos Coordonnées
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          
+          {/* Formulaire de contact */}
+          <div className="bg-white rounded-xl shadow-xl p-4 md:p-6">
+            <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4 md:mb-6 flex items-center">
+              <FaUser className="mr-3 text-green-600" />
+              Demande de devis gratuit
             </h3>
             
-            <div className="space-y-4 md:space-y-6">
-              <div className="flex items-start space-x-3 md:space-x-4">
-                <div className="text-blue-500 mt-1">
-                  <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd"/>
-                  </svg>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              {/* Nom et Prénom */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="prenom" className="block text-sm font-medium text-gray-700 mb-1">
+                    Prénom *
+                  </label>
+                  <input
+                    {...register('prenom', { required: 'Le prénom est requis' })}
+                    type="text"
+                    id="prenom"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm text-gray-900"
+                    placeholder="Votre prénom"
+                  />
+                  {errors.prenom && <p className="text-red-500 text-xs mt-1">{errors.prenom.message}</p>}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-blue-800 text-sm md:text-base">Adresse</h4>
-                  <p className="text-blue-600 text-sm md:text-base">
-                    123 Rue de la République<br />
-                    59000 Lille, France
-                  </p>
+                  <label htmlFor="nom" className="block text-sm font-medium text-gray-700 mb-1">
+                    Nom *
+                  </label>
+                  <input
+                    {...register('nom', { required: 'Le nom est requis' })}
+                    type="text"
+                    id="nom"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm text-gray-900"
+                    placeholder="Votre nom"
+                  />
+                  {errors.nom && <p className="text-red-500 text-xs mt-1">{errors.nom.message}</p>}
                 </div>
               </div>
-              
-              <div className="flex items-start space-x-3 md:space-x-4">
-                <div className="text-blue-500 mt-1">
-                  <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd"/>
-                  </svg>
+
+              {/* Email et Téléphone */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email *
+                  </label>
+                  <input
+                    {...register('email', { 
+                      required: 'L\'email est requis',
+                      pattern: {
+                        value: /^\S+@\S+$/i,
+                        message: 'Email invalide'
+                      }
+                    })}
+                    type="email"
+                    id="email"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm text-gray-900"
+                    placeholder="votre@email.com"
+                  />
+                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                 </div>
                 <div>
-                  <h4 className="font-semibold text-blue-800 text-sm md:text-base">Téléphone</h4>
-                  <a href="tel:+33123456789" className="text-blue-600 hover:text-blue-800 transition-colors text-sm md:text-base">
-                    01 23 45 67 89
-                  </a>
+                  <label htmlFor="telephone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Téléphone *
+                  </label>
+                  <input
+                    {...register('telephone', { required: 'Le téléphone est requis' })}
+                    type="tel"
+                    id="telephone"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm text-gray-900"
+                    placeholder="06 12 34 56 78"
+                  />
+                  {errors.telephone && <p className="text-red-500 text-xs mt-1">{errors.telephone.message}</p>}
                 </div>
               </div>
-              
-              <div className="flex items-start space-x-3 md:space-x-4">
-                <div className="text-blue-500 mt-1">
-                  <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z"/>
-                    <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z"/>
-                  </svg>
-                </div>
+
+              {/* Ville */}
+              <div>
+                <label htmlFor="ville" className="block text-sm font-medium text-gray-700 mb-1">
+                  Ville *
+                </label>
+                <input
+                  {...register('ville', { required: 'La ville est requise' })}
+                  type="text"
+                  id="ville"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm text-gray-900"
+                  placeholder="Votre ville"
+                />
+                {errors.ville && <p className="text-red-500 text-xs mt-1">{errors.ville.message}</p>}
+              </div>
+
+              {/* Type de prestation */}
+              <div>
+                <label htmlFor="prestation" className="block text-sm font-medium text-gray-700 mb-1">
+                  Type de prestation *
+                </label>
+                <select
+                  {...register('prestation', { required: 'Le type de prestation est requis' })}
+                  id="prestation"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm text-gray-900"
+                >
+                  <option value="">Sélectionnez une prestation</option>
+                  <option value="panneaux-solaires">🔆 Panneaux solaires</option>
+                  <option value="pompe-chaleur">🌡️ Pompe à chaleur</option>
+                  <option value="isolation">🏠 Isolation thermique</option>
+                  <option value="chaudiere">🔥 Chaudière</option>
+                  <option value="ventilation">💨 Ventilation VMC</option>
+                  <option value="autre">🔧 Autre / Plusieurs prestations</option>
+                </select>
+                {errors.prestation && <p className="text-red-500 text-xs mt-1">{errors.prestation.message}</p>}
+              </div>
+
+              {/* Sélection de date améliorée */}
+              <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-blue-800 text-sm md:text-base">Email</h4>
-                  <a href="mailto:contact@france-solaire.fr" className="text-blue-600 hover:text-blue-800 transition-colors text-sm md:text-base">
-                    contact@france-solaire.fr
-                  </a>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <FaCalendarAlt className="inline mr-2 text-green-600" />
+                    Date souhaitée pour le rendez-vous (optionnel)
+                  </label>
+                  
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setShowDatePicker(!showDatePicker)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm text-gray-900 text-left flex items-center justify-between bg-white hover:bg-gray-50"
+                    >
+                      <span className={selectedDate ? 'text-gray-900' : 'text-gray-400'}>
+                        {selectedDate 
+                          ? format(selectedDate, 'EEEE d MMMM yyyy', { locale: fr })
+                          : 'Choisir une date'
+                        }
+                      </span>
+                      <FaCalendarAlt className="text-gray-400" />
+                    </button>
+
+                    {showDatePicker && (
+                      <div className="absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg p-4">
+                        <div className="grid grid-cols-2 gap-2 max-h-48 overflow-y-auto">
+                          {availableDates.map((date, index) => {
+                            const isSelected = selectedDate && isSameDay(date, selectedDate);
+                            const isToday = isSameDay(date, new Date());
+                            
+                            return (
+                              <button
+                                key={index}
+                                type="button"
+                                onClick={() => handleDateSelect(date)}
+                                className={`p-2 text-xs rounded-lg text-left transition-colors ${
+                                  isSelected
+                                    ? 'bg-green-600 text-white'
+                                    : isToday
+                                    ? 'bg-green-100 text-green-800 border border-green-300'
+                                    : 'bg-gray-50 hover:bg-green-50 text-gray-700'
+                                }`}
+                              >
+                                <div className="font-medium">
+                                  {format(date, 'EEE d MMM', { locale: fr })}
+                                </div>
+                                {isToday && (
+                                  <div className="text-xs opacity-75">Aujourd'hui</div>
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start space-x-3 md:space-x-4">
-                <div className="text-blue-500 mt-1">
-                  <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clipRule="evenodd"/>
-                  </svg>
-                </div>
+
+                {/* Sélection d'heure améliorée */}
                 <div>
-                  <h4 className="font-semibold text-blue-800 text-sm md:text-base">Horaires</h4>
-                  <p className="text-blue-600 text-sm md:text-base">
-                    Lun - Ven : 8h00 - 18h00<br />
-                    Sam : 9h00 - 12h00
-                  </p>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <FaClock className="inline mr-2 text-green-600" />
+                    Créneau horaire souhaité (optionnel)
+                  </label>
+                  
+                  <div className="grid grid-cols-5 gap-1.5">
+                    {timeSlots.map((slot) => {
+                      const isSelected = selectedTime === slot.value;
+                      
+                      return (
+                        <button
+                          key={slot.value}
+                          type="button"
+                          onClick={() => handleTimeSelect(slot.value)}
+                          className={`py-1.5 px-1 text-xs rounded-md text-center transition-all ${
+                            isSelected
+                              ? 'bg-green-600 text-white shadow-sm'
+                              : 'bg-gray-50 hover:bg-green-50 text-gray-700 border border-gray-200 hover:border-green-300'
+                          }`}
+                        >
+                          <div className="font-medium text-xs">{slot.label}</div>
+                          <div className="text-xs opacity-75 text-xs">{slot.period}</div>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
-            
-            <div className="mt-6 md:mt-8 p-4 md:p-6 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-xl">
-              <h4 className="font-semibold text-blue-800 mb-2 text-sm md:text-base flex items-center">
-                <svg className="w-4 h-4 md:w-5 md:h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" clipRule="evenodd"/>
-                  <path d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z"/>
-                </svg>
-                Intervention Rapide
-              </h4>
-              <p className="text-blue-700 text-xs md:text-sm">
-                Devis gratuit sous 48h • Déplacement gratuit dans les Hauts-de-France
-              </p>
-            </div>
+
+              {/* Message */}
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  Votre projet (optionnel)
+                </label>
+                <textarea
+                  {...register('message')}
+                  id="message"
+                  rows={3}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm text-gray-900"
+                  placeholder="Décrivez brièvement votre projet..."
+                />
+              </div>
+
+              {/* RGPD */}
+              <div className="flex items-start">
+                <input
+                  {...register('rgpd', { required: 'Vous devez accepter les conditions' })}
+                  type="checkbox"
+                  id="rgpd"
+                  className="mt-1 h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                />
+                <label htmlFor="rgpd" className="ml-2 text-xs text-gray-600">
+                  J'accepte que mes données soient utilisées pour me recontacter dans le cadre de ma demande. *
+                </label>
+              </div>
+              {errors.rgpd && <p className="text-red-500 text-xs">{errors.rgpd.message}</p>}
+
+              {/* Bouton de soumission */}
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl text-sm flex items-center justify-center"
+              >
+                <FaCheck className="w-4 h-4 mr-2" />
+                Envoyer ma demande
+              </button>
+            </form>
           </div>
 
-          {/* Formulaire de contact */}
-          <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-xl md:rounded-2xl shadow-lg border border-blue-200/50">
-            <h3 className="text-xl md:text-2xl font-bold text-blue-800 mb-4 md:mb-6">
-              Demande de Devis Gratuit
-            </h3>
+          {/* Informations de contact */}
+          <div className="space-y-4 md:space-y-6">
             
-            <form className="space-y-4 md:space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm md:text-base font-medium text-blue-800 mb-1 md:mb-2">
-                  Nom complet *
-                </label>
-                <input 
-                  type="text" 
-                  name="name" 
-                  id="name" 
-                  autoComplete="name" 
-                  required
-                  className="w-full px-3 md:px-4 py-2 md:py-3 border border-blue-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base transition-colors" 
-                />
+            {/* Expert dédié */}
+            <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-xl shadow-xl p-4 md:p-6 text-white">
+              <div className="flex items-start">
+                <div className="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                  <FaUser className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-2">
+                    Votre Expert Dédié
+                  </h3>
+                  <p className="text-green-100 text-sm mb-3">
+                    Un expert/technicien FRANCE SOLAIRE vous accompagne :
+                  </p>
+                  <div className="flex items-center">
+                    <FaPhoneAlt className="w-4 h-4 mr-2 text-green-200" />
+                    <span className="text-xl font-bold">07 88 06 67 12</span>
+                  </div>
+                </div>
               </div>
+            </div>
+
+            {/* Coordonnées classiques */}
+            <div className="bg-white rounded-xl shadow-xl p-4 md:p-6">
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-4">
+                Autres coordonnées
+              </h3>
               
-              <div>
-                <label htmlFor="email" className="block text-sm md:text-base font-medium text-blue-800 mb-1 md:mb-2">
-                  Adresse email *
-                </label>
-                <input 
-                  type="email" 
-                  name="email" 
-                  id="email" 
-                  autoComplete="email" 
-                  required
-                  className="w-full px-3 md:px-4 py-2 md:py-3 border border-blue-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base transition-colors" 
-                />
+              <div className="space-y-3">
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                    <FaEnvelope className="w-4 h-4 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900 text-sm">Email</p>
+                    <p className="text-green-600 font-semibold text-sm">contact@france-solaire.fr</p>
+                    <p className="text-xs text-gray-500">Réponse sous 24h</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-0.5">
+                    <FaMapMarkerAlt className="w-4 h-4 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-gray-900 text-sm">Adresse</p>
+                    <p className="text-gray-600 text-sm">16 Allée des Alouettes</p>
+                    <p className="text-gray-600 text-sm">59250 HALLUIN</p>
+                  </div>
+                </div>
               </div>
-              
-              <div>
-                <label htmlFor="phone" className="block text-sm md:text-base font-medium text-blue-800 mb-1 md:mb-2">
-                  Numéro de téléphone
-                </label>
-                <input 
-                  type="tel" 
-                  name="phone" 
-                  id="phone" 
-                  autoComplete="tel" 
-                  className="w-full px-3 md:px-4 py-2 md:py-3 border border-blue-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base transition-colors" 
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="project" className="block text-sm md:text-base font-medium text-blue-800 mb-1 md:mb-2">
-                  Type de projet
-                </label>
-                <select 
-                  name="project" 
-                  id="project"
-                  className="w-full px-3 md:px-4 py-2 md:py-3 border border-blue-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base transition-colors"
-                >
-                  <option value="">Sélectionnez votre projet</option>
-                  <option value="solaire">Panneaux solaires</option>
-                  <option value="isolation">Isolation thermique</option>
-                  <option value="chauffage">Chauffage & climatisation</option>
-                  <option value="toiture">Couverture & toiture</option>
-                  <option value="menuiserie">Menuiseries</option>
-                  <option value="audit">Audit énergétique</option>
-                  <option value="autre">Autre projet</option>
-                </select>
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm md:text-base font-medium text-blue-800 mb-1 md:mb-2">
-                  Décrivez votre projet *
-                </label>
-                <textarea 
-                  id="message" 
-                  name="message" 
-                  rows={4} 
-                  required
-                  placeholder="Décrivez votre projet, vos besoins, la surface concernée..."
-                  className="w-full px-3 md:px-4 py-2 md:py-3 border border-blue-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base transition-colors resize-none"
-                ></textarea>
-              </div>
-              
-              <button 
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-lg hover:from-blue-700 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 shadow-lg text-sm md:text-base flex items-center justify-center"
-              >
-                <svg className="w-4 h-4 md:w-5 md:h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 01.75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 019.75 22.5a.75.75 0 01-.75-.75v-4.131A15.838 15.838 0 016.382 15H2.25a.75.75 0 01-.75-.75 6.75 6.75 0 017.815-6.666zM15 6.75a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5z" clipRule="evenodd"/>
-                  <path d="M5.26 17.242a.75.75 0 10-.897-1.203 5.243 5.243 0 00-2.05 5.022.75.75 0 00.625.627 5.243 5.243 0 005.022-2.051.75.75 0 10-1.202-.897 3.744 3.744 0 01-3.008 1.51c0-1.23.592-2.323 1.51-3.008z"/>
-                </svg>
-                Demander mon devis gratuit
-              </button>
-              
-              <p className="text-xs md:text-sm text-blue-600 text-center">
-                * Champs obligatoires • Réponse garantie sous 48h
-              </p>
-            </form>
+            </div>
           </div>
         </div>
       </div>
