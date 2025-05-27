@@ -97,28 +97,28 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
         </div>
 
         {/* Hero Section */}
-        <div className="bg-gradient-to-br from-orange-50 via-yellow-50 to-amber-50 py-12">
+        <div className="bg-gradient-to-br from-orange-50 via-yellow-50 to-amber-50 py-8 md:py-12">
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center">
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent mb-4">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent mb-3 md:mb-4">
                 Rénovation Énergétique dans le {departmentObj.name}
               </h1>
-              <p className="text-xl text-gray-600 mb-6 max-w-3xl mx-auto">
+              <p className="text-sm md:text-lg lg:text-xl text-gray-600 mb-4 md:mb-6 max-w-3xl mx-auto">
                 France Solaire intervient dans {allCities.length} villes du {departmentObj.name} pour vos projets de 
                 panneaux solaires, isolation, chauffage et menuiseries. Solutions certifiées RGE.
               </p>
-              <div className="flex items-center justify-center space-x-6 text-orange-600">
+              <div className="flex items-center justify-center space-x-4 md:space-x-6 text-orange-600">
                 <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd"/>
                   </svg>
-                  <span className="font-semibold">{allCities.length} villes</span>
+                  <span className="font-semibold text-xs md:text-sm">{allCities.length} villes</span>
                 </div>
                 <div className="flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" d="M12.516 2.17a.75.75 0 00-1.032 0 11.209 11.209 0 01-7.877 3.08.75.75 0 00-.722.515A12.74 12.74 0 002.25 9.75c0 5.814 3.051 10.77 7.608 13.566a.75.75 0 00.784 0C15.199 20.52 18.25 15.564 18.25 9.75a12.74 12.74 0 00-.635-4.235.75.75 0 00-.722-.515 11.209 11.209 0 01-7.877-3.08zm4.877 5.166a.75.75 0 10-1.06-1.06l-3.032 3.032-1.282-1.282a.75.75 0 00-1.06 1.06l1.813 1.813a.75.75 0 001.06 0l3.56-3.563z" clipRule="evenodd"/>
                   </svg>
-                  <span className="font-semibold">Certifié RGE</span>
+                  <span className="font-semibold text-xs md:text-sm">Certifié RGE</span>
                 </div>
               </div>
             </div>
@@ -126,20 +126,20 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
         </div>
 
         {/* Liste des villes */}
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+        <div className="max-w-6xl mx-auto px-4 py-8 md:py-12">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center">
             Toutes les villes du {departmentObj.name}
           </h2>
 
           {/* Index alphabétique */}
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Navigation alphabétique</h3>
-            <div className="flex flex-wrap gap-2">
+          <div className="bg-white rounded-lg shadow-sm p-4 md:p-6 mb-6 md:mb-8">
+            <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Navigation alphabétique</h3>
+            <div className="flex flex-wrap gap-1 md:gap-2">
               {Object.keys(citiesByLetter).sort().map((letter) => (
                 <a
                   key={letter}
                   href={`#letter-${letter}`}
-                  className="w-10 h-10 flex items-center justify-center bg-gradient-to-br from-orange-100 to-yellow-100 hover:from-orange-200 hover:to-yellow-200 text-orange-800 font-semibold rounded-lg transition-colors"
+                  className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center bg-gradient-to-br from-orange-100 to-yellow-100 hover:from-orange-200 hover:to-yellow-200 text-orange-800 font-semibold rounded-lg transition-colors text-xs md:text-sm"
                 >
                   {letter}
                 </a>
@@ -147,37 +147,45 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
             </div>
           </div>
 
-          {/* Villes groupées par lettre */}
-          {Object.keys(citiesByLetter).sort().map((letter) => (
-            <div key={letter} id={`letter-${letter}`} className="mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center">
-                <span className="w-12 h-12 bg-gradient-to-br from-orange-600 to-yellow-600 text-white rounded-full flex items-center justify-center mr-4">
-                  {letter}
-                </span>
-                {citiesByLetter[letter].length} ville{citiesByLetter[letter].length > 1 ? 's' : ''}
-              </h3>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {citiesByLetter[letter].map((city) => (
-                  <Link
-                    key={city.insee_code}
-                    href={`/zones/${department}/${createCitySlug(city.name)}`}
-                    className="bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-4 border border-gray-200 hover:border-orange-300"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h4 className="font-semibold text-gray-900 mb-1">{city.name}</h4>
-                        <p className="text-sm text-gray-500">{city.postal_code}</p>
-                      </div>
-                      <svg className="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </Link>
-                ))}
+          {/* Villes par lettre */}
+          <div className="space-y-6 md:space-y-8">
+            {Object.entries(citiesByLetter).sort().map(([letter, cities]) => (
+              <div key={letter} id={`letter-${letter}`} className="bg-white rounded-lg shadow-sm p-4 md:p-6">
+                <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4 flex items-center">
+                  <span className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-orange-500 to-yellow-500 text-white rounded-lg flex items-center justify-center font-bold mr-2 md:mr-3 text-sm md:text-base">
+                    {letter}
+                  </span>
+                  {cities.length} ville{cities.length > 1 ? 's' : ''}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
+                  {cities.map((city) => {
+                    const citySlug = city.slug || createCitySlug(city.name);
+                    return (
+                      <Link
+                        key={city.insee_code}
+                        href={`/zones/${department}/${citySlug}`}
+                        className="group block p-3 md:p-4 bg-gradient-to-br from-gray-50 to-gray-100 hover:from-orange-50 hover:to-yellow-50 rounded-lg border border-gray-200 hover:border-orange-300 transition-all duration-200 hover:shadow-md"
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex-1 min-w-0">
+                            <h4 className="font-semibold text-gray-900 group-hover:text-orange-700 transition-colors text-sm md:text-base truncate">
+                              {city.name}
+                            </h4>
+                            <p className="text-xs md:text-sm text-gray-500 mt-1">
+                              {city.postal_code}
+                            </p>
+                          </div>
+                          <svg className="w-4 h-4 md:w-5 md:h-5 text-gray-400 group-hover:text-orange-500 transition-colors flex-shrink-0 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Section CTA */}

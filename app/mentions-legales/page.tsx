@@ -21,8 +21,8 @@ export default function MentionsLegales() {
                   <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z" clipRule="evenodd"/>
                 </svg>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Mentions Légales</h1>
-              <p className="text-xl text-green-100 max-w-2xl mx-auto">
+              <h1 className="text-2xl md:text-4xl font-bold mb-4">Mentions Légales</h1>
+              <p className="text-base md:text-xl text-green-100 max-w-2xl mx-auto">
                 Informations légales et réglementaires de France Solaire
               </p>
             </div>
@@ -38,7 +38,7 @@ export default function MentionsLegales() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m7 0v-4a1 1 0 00-1-1h-2a1 1 0 00-1 1v4m6 0V10a1 1 0 00-1-1H9a1 1 0 00-1 1v11" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Identification de l'entreprise</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900">Identification de l'entreprise</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -46,8 +46,8 @@ export default function MentionsLegales() {
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                   <div>
-                    <p className="font-semibold text-gray-900">Dénomination sociale</p>
-                    <p className="text-gray-600">FRANCE SOLAIRE</p>
+                    <p className="font-semibold text-gray-900 text-sm md:text-base">Dénomination sociale</p>
+                    <p className="text-gray-600 text-sm md:text-base">FRANCE SOLAIRE</p>
                   </div>
                 </div>
                 

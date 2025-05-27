@@ -5,7 +5,7 @@ const path = require('path');
 const citiesData = require('../public/french-cities.json');
 const servicesData = require('../data/services.json');
 
-const baseUrl = 'https://francesolaire.com';
+const baseUrl = 'https://francesolaire.fr';
 
 // Départements des Hauts-de-France
 const HAUTS_DE_FRANCE_DEPARTMENTS = ['59', '62', '76', '80'];

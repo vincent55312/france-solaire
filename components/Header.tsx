@@ -16,7 +16,7 @@ const Header = () => {
               <img 
                 src="/logo.png" 
                 alt="France Solaire Logo" 
-                className="h-8 w-auto hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+                className="h-6 md:h-8 w-auto hover:opacity-80 transition-opacity duration-200 cursor-pointer"
               />
             </Link>
           </div>
@@ -66,12 +66,12 @@ const Header = () => {
               <div className="lg:hidden">
                 <a 
                   href="tel:0788066712"
-                  className="btn-phone-animated inline-flex items-center px-4 py-2.5 bg-white font-bold rounded-xl border-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                  className="btn-phone-animated inline-flex items-center px-2.5 sm:px-4 py-2 sm:py-2.5 bg-white font-bold rounded-lg sm:rounded-xl border-2 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 whitespace-nowrap"
                 >
-                  <svg className="w-4 h-4 mr-2 text-current" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 text-current" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd"/>
                   </svg>
-                  <span className="text-sm font-extrabold">07 88 06 67 12</span>
+                  <span className="text-xs sm:text-sm font-extrabold">07 88 06 67 12</span>
                 </a>
               </div>
             </div>

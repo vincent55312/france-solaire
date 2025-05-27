@@ -15,7 +15,7 @@ const InterventionSection = () => {
             </svg>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
-            Installation Panneaux Solaires Hauts-de-France
+            Zone d'intervention
           </h2>
           <div className="max-w-3xl mx-auto">
             <p className="text-sm md:text-base text-gray-600 mb-4">

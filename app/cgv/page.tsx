@@ -21,8 +21,8 @@ export default function CGV() {
                   <path fillRule="evenodd" d="M9 2.221V7H4.221a2 2 0 01.365-.5L8.5 2.586A2 2 0 019 2.22zM11 2v5a2 2 0 01-2 2H4v11a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2h-7z" clipRule="evenodd"/>
                 </svg>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Conditions Générales de Vente</h1>
-              <p className="text-xl text-green-100 max-w-2xl mx-auto">
+              <h1 className="text-2xl md:text-4xl font-bold mb-4">Conditions Générales de Vente</h1>
+              <p className="text-base md:text-xl text-green-100 max-w-2xl mx-auto">
                 Conditions applicables à tous nos services de rénovation énergétique
               </p>
             </div>
@@ -38,7 +38,7 @@ export default function CGV() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m7 0v-4a1 1 0 00-1-1h-2a1 1 0 00-1 1v4m6 0V10a1 1 0 00-1-1H9a1 1 0 00-1 1v11" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">1. Présentation de l'entreprise</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900">1. Présentation de l'entreprise</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">

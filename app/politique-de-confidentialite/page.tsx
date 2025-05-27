@@ -21,8 +21,8 @@ export default function PolitiqueConfidentialite() {
                   <path fillRule="evenodd" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" clipRule="evenodd"/>
                 </svg>
               </div>
-              <h1 className="text-4xl font-bold mb-4">Politique de Confidentialité</h1>
-              <p className="text-xl text-green-100 max-w-2xl mx-auto">
+              <h1 className="text-2xl md:text-4xl font-bold mb-4">Politique de Confidentialité</h1>
+              <p className="text-base md:text-xl text-green-100 max-w-2xl mx-auto">
                 Protection de vos données personnelles conforme au RGPD
               </p>
             </div>
@@ -38,7 +38,7 @@ export default function PolitiqueConfidentialite() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">Introduction</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900">Introduction</h2>
             </div>
             <p className="text-gray-600 leading-relaxed">
               France Solaire s'engage à protéger et respecter votre vie privée. Cette politique explique comment nous 

@@ -26,21 +26,21 @@ interface Service {
 
 const getServiceIcon = (tags: string[]) => {
   if (tags.some(tag => tag.toLowerCase().includes('solaire') || tag.toLowerCase().includes('photovoltaïque'))) {
-    return <FaSolarPanel className="w-8 h-8" />;
+    return <FaSolarPanel className="w-6 h-6 md:w-8 md:h-8" />;
   }
   if (tags.some(tag => tag.toLowerCase().includes('isolation') || tag.toLowerCase().includes('thermique'))) {
-    return <FaHome className="w-8 h-8" />;
+    return <FaHome className="w-6 h-6 md:w-8 md:h-8" />;
   }
   if (tags.some(tag => tag.toLowerCase().includes('pompe') || tag.toLowerCase().includes('chauffage'))) {
-    return <FaLeaf className="w-8 h-8" />;
+    return <FaLeaf className="w-6 h-6 md:w-8 md:h-8" />;
   }
   if (tags.some(tag => tag.toLowerCase().includes('sécurité') || tag.toLowerCase().includes('alarme'))) {
-    return <FaShieldAlt className="w-8 h-8" />;
+    return <FaShieldAlt className="w-6 h-6 md:w-8 md:h-8" />;
   }
   if (tags.some(tag => tag.toLowerCase().includes('maintenance') || tag.toLowerCase().includes('entretien'))) {
-    return <FaWrench className="w-8 h-8" />;
+    return <FaWrench className="w-6 h-6 md:w-8 md:h-8" />;
   }
-  return <FaLightbulb className="w-8 h-8" />;
+  return <FaLightbulb className="w-6 h-6 md:w-8 md:h-8" />;
 };
 
 const getServiceCategory = (tags: string[]) => {
@@ -81,13 +81,13 @@ export default function ServicesPage() {
       
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-orange-50 via-yellow-50 to-amber-50 py-16">
+        <section className="bg-gradient-to-br from-orange-50 via-yellow-50 to-amber-50 py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent mb-6">
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent mb-4 md:mb-6">
                 Nos Services Énergétiques
               </h1>
-              <p className="text-xl md:text-2xl mb-8 text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base md:text-xl lg:text-2xl mb-6 md:mb-8 text-gray-600 max-w-3xl mx-auto">
                 Solutions complètes pour votre transition énergétique dans les Hauts-de-France
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -109,37 +109,37 @@ export default function ServicesPage() {
         </section>
 
         {/* Services par Catégorie */}
-        <section className="py-16">
+        <section className="py-12 md:py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {Object.entries(servicesByCategory).map(([category, categoryServices]) => (
-              <div key={category} className="mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+              <div key={category} className="mb-12 md:mb-16">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 md:mb-8 text-center">
                   {category}
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                   {categoryServices.map((service) => (
                     <Link
                       key={service.slug}
                       href={`/${service.slug}`}
                       className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-orange-300"
                     >
-                      <div className="p-6">
-                        <div className="flex items-center mb-4">
-                          <div className="flex-shrink-0 p-3 bg-gradient-to-br from-orange-100 to-yellow-100 text-orange-600 rounded-lg group-hover:bg-gradient-to-br group-hover:from-orange-600 group-hover:to-yellow-600 group-hover:text-white transition-all duration-300">
+                      <div className="p-4 md:p-6">
+                        <div className="flex items-center mb-3 md:mb-4">
+                          <div className="flex-shrink-0 p-2 md:p-3 bg-gradient-to-br from-orange-100 to-yellow-100 text-orange-600 rounded-lg group-hover:bg-gradient-to-br group-hover:from-orange-600 group-hover:to-yellow-600 group-hover:text-white transition-all duration-300">
                             {getServiceIcon(service.tags)}
                           </div>
-                          <div className="ml-4 flex-1">
-                            <h3 className="text-lg font-semibold text-gray-900 group-hover:text-orange-600 transition-colors duration-300 line-clamp-2">
+                          <div className="ml-3 md:ml-4 flex-1">
+                            <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-orange-600 transition-colors duration-300 line-clamp-2">
                               {service.title}
                             </h3>
                           </div>
                         </div>
                         
-                        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                        <p className="text-gray-600 text-sm mb-3 md:mb-4 line-clamp-3">
                           {service.description}
                         </p>
                         
-                        <div className="flex flex-wrap gap-2 mb-4">
+                        <div className="flex flex-wrap gap-1 md:gap-2 mb-3 md:mb-4">
                           {service.tags.slice(0, 3).map((tag, index) => (
                             <span
                               key={index}
@@ -169,12 +169,12 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-br from-orange-600 to-yellow-600 text-white py-16">
+        <section className="bg-gradient-to-br from-orange-600 to-yellow-600 text-white py-12 md:py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
               Prêt à Commencer Votre Projet ?
             </h2>
-            <p className="text-xl mb-8 opacity-90">
+            <p className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 opacity-90">
               Nos experts RGE vous accompagnent de A à Z dans votre transition énergétique
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
