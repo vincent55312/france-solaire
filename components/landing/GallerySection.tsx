@@ -246,7 +246,7 @@ const GallerySection: React.FC = () => {
         </div>
 
         {/* Carousel */}
-        <div className="relative mb-10">
+        <div className="relative mb-12">
           <div className="overflow-hidden rounded-xl shadow-xl">
             <div 
               className="flex transition-transform duration-500 ease-in-out"
@@ -293,7 +293,7 @@ const GallerySection: React.FC = () => {
             <>
               <button
                 onClick={goToPrevious}
-                className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl z-10"
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white text-gray-700 p-3 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl z-10 border border-gray-200"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -302,30 +302,13 @@ const GallerySection: React.FC = () => {
               
               <button
                 onClick={goToNext}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl z-10"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white text-gray-700 p-3 rounded-full transition-all duration-200 shadow-lg hover:shadow-xl z-10 border border-gray-200"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
             </>
-          )}
-
-          {/* Dots indicateurs */}
-          {photos.length > itemsPerView && (
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-              {Array.from({ 
-                length: itemsPerView === 1 ? photos.length : maxIndex + 1 
-              }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors duration-200 ${
-                    index === currentIndex ? 'bg-white shadow-lg' : 'bg-white/50'
-                  }`}
-                />
-              ))}
-            </div>
           )}
 
           {/* Indicateur de position */}
@@ -338,6 +321,27 @@ const GallerySection: React.FC = () => {
             </div>
           )}
         </div>
+
+        {/* Dots indicateurs repositionnés */}
+        {photos.length > itemsPerView && (
+          <div className="flex justify-center mb-8">
+            <div className="flex space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-gray-200">
+              {Array.from({ 
+                length: itemsPerView === 1 ? photos.length : maxIndex + 1 
+              }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-stone-600 shadow-md scale-110' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Bouton pour voir toute la galerie */}
         <div className="text-center mb-8">
