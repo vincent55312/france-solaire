@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import servicesData from '@/data/services.json';
+import articlesData from '@/data/articles.json';
 import { getHautsDeFranceDepartments, getCitiesByDepartment, createCitySlug, generateAllCityParams } from '@/lib/cities';
 
 export const metadata = {
@@ -30,7 +31,7 @@ export default function PlanDuSite() {
   });
 
   const totalCities = allCityParams.length;
-  const totalPages = 8 + servicesData.services.length + 4 + departments.length + totalCities;
+  const totalPages = 9 + servicesData.services.length + articlesData.length + departments.length + totalCities;
 
   return (
     <>
@@ -63,6 +64,11 @@ export default function PlanDuSite() {
                 <li>
                   <Link href="/services" className="text-blue-600 hover:text-blue-800 hover:underline">
                     Nos Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/articles" className="text-blue-600 hover:text-blue-800 hover:underline">
+                    Nos Articles
                   </Link>
                 </li>
                 <li>
@@ -102,6 +108,25 @@ export default function PlanDuSite() {
                   )}
                 </ul>
               </div>
+            </div>
+
+            {/* Articles détaillés */}
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                <svg className="w-5 h-5 mr-2 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path fillRule="evenodd" d="M4.125 3C3.089 3 2.25 3.84 2.25 4.875V18a3 3 0 003 3h15a3 3 0 01-3-3V4.875C17.25 3.839 16.41 3 15.375 3H4.125zM12 9.75a.75.75 0 000 1.5h1.5a.75.75 0 000-1.5H12zm-.75-2.25a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75zM6 12.75a.75.75 0 000 1.5h7.5a.75.75 0 000-1.5H6zm-.75 3.75a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5H6a.75.75 0 01-.75-.75zM6 6.75a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h3a.75.75 0 00.75-.75v-3A.75.75 0 009 6.75H6z" clipRule="evenodd"/>
+                </svg>
+                Articles de Blog ({articlesData.length})
+              </h2>
+              <ul className="space-y-2">
+                {articlesData.map((article) => (
+                  <li key={article.slug}>
+                    <Link href={`/articles/${article.slug}`} className="text-blue-600 hover:text-blue-800 hover:underline">
+                      {article.titre}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Départements avec compteur de villes */}
@@ -281,11 +306,15 @@ export default function PlanDuSite() {
               <div className="space-y-3 text-sm text-gray-700">
                 <div className="flex justify-between">
                   <span>Pages principales :</span>
-                  <span className="font-medium">4</span>
+                  <span className="font-medium">5</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Services détaillés :</span>
                   <span className="font-medium">{servicesData.services.length}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Articles de blog :</span>
+                  <span className="font-medium">{articlesData.length}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Départements :</span>
@@ -318,7 +347,7 @@ export default function PlanDuSite() {
                 <div className="text-sm text-blue-700 mt-1 space-y-1">
                   <p>
                     Ce plan du site est automatiquement généré et comprend {totalPages.toLocaleString()} pages 
-                    couvrant {totalCities.toLocaleString()} villes des Hauts-de-France.
+                    couvrant {totalCities.toLocaleString()} villes des Hauts-de-France, {servicesData.services.length} services détaillés et {articlesData.length} articles de blog.
                   </p>
                   <p>
                     Dernière mise à jour : {new Date().toLocaleDateString('fr-FR')}

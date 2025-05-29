@@ -39,6 +39,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link href="/articles" className="text-gray-600 hover:text-green-600 transition-colors duration-200 text-xs md:text-sm">
+                  Nos Articles
+                </Link>
+              </li>
+              <li>
                 <Link href="/zones" className="text-gray-600 hover:text-green-600 transition-colors duration-200 text-xs md:text-sm">
                   Annuaire des villes
                 </Link>

@@ -4,6 +4,7 @@ const path = require('path');
 // Import des données
 const citiesData = require('../public/french-cities.json');
 const servicesData = require('../data/services.json');
+const articlesData = require('../data/articles.json');
 
 const baseUrl = 'https://francesolaire.fr';
 
@@ -51,6 +52,7 @@ function generateSitemap() {
     { url: '/services', priority: '0.9', changefreq: 'weekly' },
     { url: '/zones', priority: '0.8', changefreq: 'weekly' },
     { url: '/galerie', priority: '0.7', changefreq: 'monthly' },
+    { url: '/articles', priority: '0.8', changefreq: 'weekly' },
     { url: '/mentions-legales', priority: '0.3', changefreq: 'yearly' },
     { url: '/politique-de-confidentialite', priority: '0.3', changefreq: 'yearly' },
     { url: '/cgv', priority: '0.3', changefreq: 'yearly' },
@@ -75,6 +77,17 @@ function generateSitemap() {
 <lastmod>${currentDate}</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
+</url>`;
+  });
+
+  // Pages des articles
+  articlesData.forEach(article => {
+    xml += `
+<url>
+<loc>${baseUrl}/articles/${article.slug}</loc>
+<lastmod>${currentDate}</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.7</priority>
 </url>`;
   });
 
@@ -119,9 +132,10 @@ function generateSitemap() {
   console.log(`📊 Statistiques :`);
   console.log(`   - Pages statiques : ${staticPages.length}`);
   console.log(`   - Services : ${servicesData.services.length}`);
+  console.log(`   - Articles : ${articlesData.length}`);
   console.log(`   - Départements : ${Object.keys(departmentSlugs).length}`);
   console.log(`   - Villes : ${totalCities}`);
-  console.log(`   - Total URLs : ${staticPages.length + servicesData.services.length + Object.keys(departmentSlugs).length + totalCities}`);
+  console.log(`   - Total URLs : ${staticPages.length + servicesData.services.length + articlesData.length + Object.keys(departmentSlugs).length + totalCities}`);
   console.log(`📝 Fichier créé : ${outputPath}`);
 }
 
