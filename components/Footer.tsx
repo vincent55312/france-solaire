@@ -169,7 +169,6 @@ const Footer = () => {
               <div className="flex flex-wrap gap-x-2 md:gap-x-4 gap-y-0.5 md:gap-y-1 justify-center lg:justify-start">
                 <span>NAF: 4322B</span>
                 <span>Dirigeant: Arthur ZEGHERS</span>
-                <span>Créée le 28 octobre 2024</span>
               </div>
             </div>
             
