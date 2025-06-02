@@ -48,7 +48,7 @@ const ArticlesPage: React.FC = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent">
-                Blog Rénovation Énergétique
+                Nos articles
               </h1>
               
               <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">

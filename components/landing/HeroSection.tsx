@@ -4,6 +4,12 @@ import { FaMoneyBillWave, FaChartLine, FaStar } from 'react-icons/fa';
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen md:min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 via-white to-blue-50 overflow-hidden" style={{ minHeight: 'calc(100vh)' }}>
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" 
+        style={{ backgroundImage: 'url(/background.webp)' }}
+      ></div>
+      
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>

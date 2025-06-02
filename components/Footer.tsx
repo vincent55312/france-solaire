@@ -162,13 +162,11 @@ const Footer = () => {
             {/* Informations légales */}
             <div className="text-xs text-gray-500 space-y-0.5 md:space-y-1 text-center lg:text-left">
               <div className="flex flex-wrap gap-x-2 md:gap-x-4 gap-y-0.5 md:gap-y-1 justify-center lg:justify-start">
-                <span>SIREN: 934 592 973</span>
-                <span>SIRET: 934 592 973 00010</span>
-                <span>TVA: FR42934592973</span>
+                <span>Dirigeant: Arthur ZEGHERS</span>
               </div>
               <div className="flex flex-wrap gap-x-2 md:gap-x-4 gap-y-0.5 md:gap-y-1 justify-center lg:justify-start">
-                <span>NAF: 4322B</span>
-                <span>Dirigeant: Arthur ZEGHERS</span>
+                <span>SIRET: 934 592 973 00010</span>
+                <span>16 Allée des Alouettes, 59250 HALLUIN</span>
               </div>
             </div>
             
@@ -177,8 +175,16 @@ const Footer = () => {
               <p className="text-xs md:text-sm text-gray-500">
                 &copy; {new Date().getFullYear()} France Solaire. Tous droits réservés.
               </p>
-              <p className="text-xs text-gray-400 mt-0.5 md:mt-1">
-                Travaux d'installation d'équipements thermiques et de climatisation
+              <p className="text-xs text-gray-400 mt-1">
+                Développé avec expertise par{" "}
+                <a 
+                  href="https://site-en-or.fr" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-yellow-500 hover:text-yellow-400 transition-colors"
+                >
+                  site-en-or.fr
+                </a>
               </p>
             </div>
           </div>
