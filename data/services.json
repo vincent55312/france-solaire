@@ -91,6 +91,12 @@
         "description": "Chauffe-eau thermodynamique utilisant les calories de l'air ambiant pour produire votre eau chaude sanitaire. Économies d'énergie jusqu'à 70% par rapport à un chauffe-eau électrique classique. Installation simple, fonctionnement silencieux et production d'eau chaude en continu pour le confort de toute la famille."
       },
       {
+        "slug": "renovation-traitement-toiture",
+        "title": "Rénovation et Traitement de Toiture", 
+        "tags": ["rénovation toiture", "traitement toiture", "nettoyage toiture", "résine colorée", "réparation fuites", "anti-mousse", "hydrofugation", "étanchéité"],
+        "description": "Rénovation complète de toiture et traitement professionnel pour prolonger sa durée de vie et rénover son aspect esthétique. Réparation de fuites, réfection partielle ou complète, nettoyage haute pression, traitement anti-mousse et application de résine colorée pour protéger et embellir vos tuiles. Hydrofugation et étanchéité pour une protection durable contre l'humidité et les intempéries. Intervention sur tous types de couvertures avec produits de qualité professionnelle et garantie décennale."
+      },
+      {
         "slug": "toiture-tuiles-terre-cuite-ardoise",
         "title": "Réfection Toiture - Tuiles Terre Cuite et Ardoise",
         "tags": ["toiture", "tuiles terre cuite", "ardoise", "réfection", "étanchéité"],
@@ -275,6 +281,24 @@
         "title": "Éclairage LED Économique et Intelligent",
         "tags": ["éclairage LED", "économies énergie", "intelligent", "domotique", "ambiance"],
         "description": "Rénovation de l'éclairage avec technologie LED économique et intelligente. Réduction de la consommation électrique jusqu'à 80% avec qualité d'éclairage supérieure. Solutions connectées avec variation d'intensité, changement de couleur et programmation automatique. Éclairage d'ambiance et fonctionnel pour optimiser votre confort."
+      },
+      {
+        "slug": "isolation-thermique-complete",
+        "title": "Isolation Thermique Complète",
+        "tags": ["isolation thermique", "combles perdus", "isolation extérieure", "isolation murs", "matériaux écologiques", "économies énergie"],
+        "description": "Amélioration complète de l'efficacité énergétique de votre habitat par l'isolation des combles, murs et sols. Solutions d'isolation thermique par l'extérieur (ITE) et par l'intérieur (ITI) avec matériaux écologiques certifiés. Investissement rentable pour réduire jusqu'à 30% vos factures de chauffage et valoriser votre patrimoine immobilier. Étude thermique personnalisée et accompagnement pour les aides financières."
+      },
+      {
+        "slug": "chauffage-climatisation-performant", 
+        "title": "Chauffage et Climatisation Performants",
+        "tags": ["chauffage", "climatisation", "pompe à chaleur", "chaudière condensation", "climatisation réversible", "maintenance"],
+        "description": "Installation et maintenance de systèmes de chauffage et climatisation haute performance pour votre confort optimal toute l'année. Pompes à chaleur air/eau, chaudières gaz à condensation, climatisation réversible et systèmes de chauffage central. Technologies modernes pour des économies d'énergie substantielles et un confort thermique parfait. Maintenance préventive et dépannage assurés par nos techniciens qualifiés."
+      },
+      {
+        "slug": "menuiseries-pvc-aluminium",
+        "title": "Menuiseries PVC et Aluminium Sur-Mesure",
+        "tags": ["menuiseries", "fenêtres PVC", "fenêtres aluminium", "triple vitrage", "portes d'entrée", "volets roulants", "sur-mesure"],
+        "description": "Remplacement de fenêtres et portes pour améliorer l'isolation phonique et thermique de votre habitation. Large gamme de menuiseries PVC et aluminium sur-mesure avec double ou triple vitrage haute performance. Portes d'entrée sécurisées, volets roulants motorisés et solutions personnalisées selon votre architecture. Installation certifiée RGE avec garantie et finitions soignées."
       },
       {
         "slug": "detecteur-fumee-securite-incendie",

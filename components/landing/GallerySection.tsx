@@ -311,37 +311,33 @@ const GallerySection: React.FC = () => {
             </>
           )}
 
-          {/* Indicateur de position */}
+          {/* Navigation simple et robuste */}
           {photos.length > itemsPerView && (
-            <div className="absolute top-3 right-3 bg-black/50 text-white px-2 py-1 rounded-full text-xs font-medium">
-              {itemsPerView === 1 
-                ? `${currentIndex + 1} / ${photos.length}`
-                : `${currentIndex + 1}-${Math.min(currentIndex + itemsPerView, photos.length)} / ${photos.length}`
-              }
+            <div className="flex justify-center items-center mb-8 space-x-4">
+              {/* Compteur simple */}
+              <div className="bg-white/90 backdrop-blur-sm px-6 py-3 rounded-full shadow-lg border border-gray-200">
+                <span className="text-sm font-medium text-gray-700">
+                  {itemsPerView === 1 
+                    ? `${currentIndex + 1} / ${photos.length}`
+                    : `${currentIndex + 1}-${Math.min(currentIndex + itemsPerView, photos.length)} / ${photos.length}`
+                  }
+                </span>
+              </div>
+              
+              {/* Barre de progression */}
+              <div className="bg-white/80 backdrop-blur-sm px-4 py-3 rounded-full shadow-lg border border-gray-200">
+                <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-stone-600 rounded-full transition-all duration-500 ease-out"
+                    style={{ 
+                      width: `${((currentIndex + 1) / (itemsPerView === 1 ? photos.length : maxIndex + 1)) * 100}%` 
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           )}
         </div>
-
-        {/* Dots indicateurs repositionnés */}
-        {photos.length > itemsPerView && (
-          <div className="flex justify-center mb-8">
-            <div className="flex space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-gray-200">
-              {Array.from({ 
-                length: itemsPerView === 1 ? photos.length : maxIndex + 1 
-              }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    index === currentIndex 
-                      ? 'bg-stone-600 shadow-md scale-110' 
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* Bouton pour voir toute la galerie */}
         <div className="text-center mb-8">
