@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaSolarPanel, FaHome, FaLeaf, FaShieldAlt, FaWrench, FaLightbulb, FaArrowRight } from 'react-icons/fa';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -23,6 +24,16 @@ interface Service {
   tags: string[];
   description: string;
 }
+
+// Mapping des services vers leurs images
+const serviceImages: Record<string, string> = {
+  'installation-panneaux-solaires-photovoltaiques': '/sections/panneaux_solaire.png',
+  'isolation-thermique-complete': '/sections/isolation.png',
+  'chauffage-climatisation-performant': '/sections/climatisation.png',
+  'renovation-traitement-toiture': '/sections/renovation_toiture.png',
+  'menuiseries-pvc-aluminium': '/sections/fenetre.jpeg',
+  'renovation-energetique-globale': '/sections/bilan.png'
+};
 
 const getServiceIcon = (tags: string[]) => {
   if (tags.some(tag => tag.toLowerCase().includes('solaire') || tag.toLowerCase().includes('photovoltaïque'))) {
@@ -81,8 +92,18 @@ export default function ServicesPage() {
       
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-orange-50 via-yellow-50 to-amber-50 py-12 md:py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative bg-gradient-to-br from-orange-50 via-yellow-50 to-amber-50 py-12 md:py-16 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/sections/panneaux_solaire.png"
+              alt="Services énergétiques"
+              fill
+              className="object-cover opacity-70"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-50/40 via-yellow-50/40 to-amber-50/40" />
+          </div>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent mb-4 md:mb-6">
                 Nos Services Énergétiques
@@ -121,9 +142,23 @@ export default function ServicesPage() {
                     <Link
                       key={service.slug}
                       href={`/${service.slug}`}
-                      className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-orange-300"
+                      className="group relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-orange-300"
                     >
-                      <div className="p-4 md:p-6">
+                      {/* Image de fond */}
+                      {serviceImages[service.slug] && (
+                        <div className="absolute inset-0 z-0">
+                          <Image
+                            src={serviceImages[service.slug]}
+                            alt={service.title}
+                            fill
+                            className="object-cover opacity-40 group-hover:opacity-30 transition-opacity duration-300"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/20 to-white/30" />
+                        </div>
+                      )}
+
+                      <div className="relative z-10 p-4 md:p-6 bg-white/90 backdrop-blur-sm">
                         <div className="flex items-center mb-3 md:mb-4">
                           <div className="flex-shrink-0 p-2 md:p-3 bg-gradient-to-br from-orange-100 to-yellow-100 text-orange-600 rounded-lg group-hover:bg-gradient-to-br group-hover:from-orange-600 group-hover:to-yellow-600 group-hover:text-white transition-all duration-300">
                             {getServiceIcon(service.tags)}
@@ -169,8 +204,18 @@ export default function ServicesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-br from-orange-600 to-yellow-600 text-white py-12 md:py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative bg-gradient-to-br from-orange-600 to-yellow-600 text-white py-12 md:py-16 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/sections/bilan.png"
+              alt="Contactez-nous"
+              fill
+              className="object-cover opacity-70"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-600/60 to-yellow-600/60" />
+          </div>
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3 md:mb-4">
               Prêt à Commencer Votre Projet ?
             </h2>

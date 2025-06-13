@@ -8,6 +8,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServiceNavigation from '@/components/services/ServiceNavigation';
 import servicesData from '@/data/services.json';
+import Image from 'next/image';
 
 interface ServicePageProps {
   params: Promise<{
@@ -21,6 +22,16 @@ interface Service {
   tags: string[];
   description: string;
 }
+
+// Mapping des services vers leurs images
+const serviceImages: Record<string, string> = {
+  'installation-panneaux-solaires-photovoltaiques': '/sections/panneaux_solaire.png',
+  'isolation-thermique-complete': '/sections/isolation.png',
+  'chauffage-climatisation-performant': '/sections/climatisation.png',
+  'renovation-traitement-toiture': '/sections/renovation_toiture.png',
+  'menuiseries-pvc-aluminium': '/sections/fenetre.jpeg',
+  'renovation-energetique-globale': '/sections/bilan.png'
+};
 
 const ServicePage: React.FC<ServicePageProps> = ({ params }) => {
   const { slug } = React.use(params);
@@ -91,8 +102,20 @@ const ServicePage: React.FC<ServicePageProps> = ({ params }) => {
       <main className="pt-16">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-orange-100 via-yellow-100 to-amber-200 text-gray-900 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-yellow-500/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          {/* Image de fond */}
+          {serviceImages[slug] && (
+            <div className="absolute inset-0 z-0">
+              <Image
+                src={serviceImages[slug]}
+                alt={service.title}
+                fill
+                className="object-cover opacity-30"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 via-yellow-100/30 to-amber-200/30" />
+            </div>
+          )}
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="max-w-4xl">
               {/* Breadcrumb */}
               <nav className="flex items-center space-x-2 text-gray-600 text-sm mb-6">

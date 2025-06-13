@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaHandHoldingUsd } from 'react-icons/fa';
+import Image from 'next/image';
 
 const PrestationsSection = () => {
   const prestations = [
@@ -13,7 +14,8 @@ const PrestationsSection = () => {
         </svg>
       ),
       features: ["Étude de faisabilité gratuite", "Installation certifiée RGE", "Garantie 20 ans", "Suivi de production"],
-      slug: "installation-panneaux-solaires-photovoltaiques"
+      slug: "installation-panneaux-solaires-photovoltaiques",
+      image: "/sections/panneaux_solaire.png"
     },
     {
       title: "Isolation Thermique",
@@ -25,7 +27,8 @@ const PrestationsSection = () => {
         </svg>
       ),
       features: ["Isolation combles perdus", "Isolation par l'extérieur", "Isolation des murs", "Matériaux écologiques"],
-      slug: "isolation-thermique-complete"
+      slug: "isolation-thermique-complete",
+      image: "/sections/isolation.png"
     },
     {
       title: "Chauffage & Climatisation",
@@ -36,7 +39,8 @@ const PrestationsSection = () => {
         </svg>
       ),
       features: ["Pompes à chaleur air/eau", "Climatisation réversible", "Chaudières condensation", "Maintenance préventive"],
-      slug: "chauffage-climatisation-performant"
+      slug: "chauffage-climatisation-performant",
+      image: "/sections/climatisation.png"
     },
     {
       title: "Rénovation & Traitement Toiture",
@@ -48,7 +52,8 @@ const PrestationsSection = () => {
         </svg>
       ),
       features: ["Rénovation complète", "Nettoyage haute pression", "Résine colorée protection", "Réparation étanchéité"],
-      slug: "renovation-traitement-toiture"
+      slug: "renovation-traitement-toiture",
+      image: "/sections/renovation_toiture.png"
     },
     {
       title: "Menuiseries PVC/Aluminium",
@@ -59,7 +64,8 @@ const PrestationsSection = () => {
         </svg>
       ),
       features: ["Fenêtres triple vitrage", "Portes d'entrée sécurisées", "Volets roulants", "Sur-mesure"],
-      slug: "menuiseries-pvc-aluminium"
+      slug: "menuiseries-pvc-aluminium",
+      image: "/sections/fenetre.jpeg"
     },
     {
       title: "Expertise & Certification",
@@ -71,7 +77,8 @@ const PrestationsSection = () => {
         </svg>
       ),
       features: ["Bilan énergétique", "Relevé des installations", "Propositions personnalisées", "Conseils techniques"],
-      slug: "renovation-energetique-globale"
+      slug: "renovation-energetique-globale",
+      image: "/sections/bilan.png"
     }
   ];
 
@@ -101,41 +108,64 @@ const PrestationsSection = () => {
               href={`/${prestation.slug}`}
               className="group block"
             >
-              <article className={`bg-white/80 backdrop-blur-sm rounded-xl p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-200/50 hover:border-amber-300/70 hover-lift cursor-pointer group-hover:scale-[1.02] group-hover:bg-white/90`}>
-                <div className="text-center mb-2 md:mb-3">
-                  <div className="text-amber-600 mb-1 md:mb-2 flex justify-center group-hover:text-amber-700 transition-colors duration-300" role="img" aria-label={prestation.title}>
-                    <div className="w-6 h-6 md:w-8 md:h-8">
-                      {React.cloneElement(prestation.icon, {
-                        className: "w-6 h-6 md:w-8 md:h-8"
-                      })}
-                    </div>
-                  </div>
-                  <h3 className="text-sm md:text-base lg:text-lg font-bold text-amber-800 mb-1 group-hover:text-amber-900 transition-colors duration-300">
-                    {prestation.title}
-                  </h3>
+              <article className="relative bg-white/80 backdrop-blur-sm rounded-xl p-3 md:p-4 shadow-lg hover:shadow-xl transition-all duration-300 border border-amber-200/50 hover:border-amber-300/70 hover-lift cursor-pointer group-hover:scale-[1.02] group-hover:bg-white/90 overflow-hidden">
+                {/* Image de fond avec overlay */}
+                <div className="relative w-full h-[160px] rounded-t-lg overflow-hidden">
+                  <Image
+                    src={prestation.image}
+                    alt={prestation.title}
+                    fill
+                    style={{
+                      objectFit: 'cover',
+                      objectPosition: 'center 30%'
+                    }}
+                    className="opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={index < 3}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/10 to-white/20" />
                 </div>
-                
-                <p className="text-amber-700 text-xs md:text-xs leading-relaxed mb-2 md:mb-3 group-hover:text-amber-800 transition-colors duration-300">
-                  {prestation.description}
-                </p>
-                
-                <ul className="space-y-0.5">
-                  {prestation.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-xs text-amber-600 group-hover:text-amber-700 transition-colors duration-300">
-                      <span className="text-amber-500 mr-2 text-xs group-hover:text-amber-600 transition-colors duration-300">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
 
-                {/* Indicateur de lien */}
-                <div className="mt-3 pt-3 border-t border-amber-200/30 flex items-center justify-between">
-                  <span className="text-xs text-amber-600 font-medium group-hover:text-amber-700 transition-colors duration-300">
-                    En savoir plus
-                  </span>
-                  <svg className="w-4 h-4 text-amber-500 group-hover:text-amber-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                {/* Titre et icône sous l'image */}
+                <div className="relative z-10 bg-white px-3 py-2 border-b border-amber-100">
+                  <div className="flex items-center gap-2">
+                    <div className="text-amber-600 group-hover:text-amber-700 transition-colors duration-300" role="img" aria-label={prestation.title}>
+                      <div className="w-5 h-5 md:w-6 md:h-6">
+                        {React.cloneElement(prestation.icon, {
+                          className: "w-5 h-5 md:w-6 md:h-6"
+                        })}
+                      </div>
+                    </div>
+                    <h3 className="text-sm md:text-base font-bold text-amber-800 group-hover:text-amber-900 transition-colors duration-300">
+                      {prestation.title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Contenu */}
+                <div className="relative z-10 bg-white/80 backdrop-blur-sm rounded-b-lg p-2 shadow-sm">
+                  <p className="text-amber-700 text-xs md:text-xs leading-relaxed mb-2 md:mb-3 group-hover:text-amber-800 transition-colors duration-300">
+                    {prestation.description}
+                  </p>
+                  
+                  <ul className="space-y-0.5">
+                    {prestation.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-xs text-amber-600 group-hover:text-amber-700 transition-colors duration-300">
+                        <span className="text-amber-500 mr-2 text-xs group-hover:text-amber-600 transition-colors duration-300">✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Indicateur de lien */}
+                  <div className="mt-2 pt-2 border-t border-amber-200/30 flex items-center justify-between">
+                    <span className="text-xs text-amber-600 font-medium group-hover:text-amber-700 transition-colors duration-300">
+                      En savoir plus
+                    </span>
+                    <svg className="w-4 h-4 text-amber-500 group-hover:text-amber-600 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
               </article>
             </Link>
